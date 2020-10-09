@@ -55,7 +55,19 @@
 					</section>
 
 				<!-- Main -->
-				<h2>Enter a new Member</h2>
+				<h2>Search for Existing Member</h2>
+				<form class="form-group" action="index.html" method="get">
+					<div class="form-group">
+						<label for="userSearch">User Search</label>
+						<input type="text" class="form-control" id="userSearch" placeholder="User's Name">
+						<button type="button" name="button">Search</button>
+
+					</div>
+
+				</form>
+
+
+				<h2>Enter a New Member</h2>
 				<form>
 				  <div class="form-group">
 				    <label for="PersonalID">Personal ID</label>
@@ -138,19 +150,19 @@
 						</div>
 					</div>
 					<div class="form-group">
-				    <label for="zipcode">City</label>
+				    <label for="zipcode">Zipcode</label>
 				    <input type="text" class="form-control" id="zipcode" placeholder="Zipcode">
 				  </div>
 					<div class="form-group">
-				    <label for="email">City</label>
+				    <label for="email">Email</label>
 				    <input type="email" class="form-control" id="email" placeholder="User's Email">
 				  </div>
 					<div class="form-group">
-				    <label for="dateofBirth">City</label>
+				    <label for="dateofBirth">Date of Birth</label>
 				    <input type="date" class="form-control" id="dateofBirth" placeholder="yyyy-mm-dd">
 				  </div>
 					<div class="form-group">
-				    <label for="startDate">City</label>
+				    <label for="startDate">Start Date</label>
 				    <input type="date" class="form-control" id="startDate" placeholder="yyyy-mm-dd">
 				  </div>
 					<div class="form-group">
@@ -176,12 +188,12 @@
 				    <input type="text" class="form-control" id="stationNumber" placeholder="Station Number">
 				  </div>
 					<div class="form-group">
-						<label for="isActive" class="col-sm-2 control-label">Active Status</label>
+						<label for="isActive" class="col-sm-2 control-label">Is Member Active?</label>
 						<div class="col-sm-10">
 							<select class="form-control" id="isActive" name="isActive">
 								<option value="">N/A</option>
-								<option value="Active">Active</option>
-								<option value="Inactive">Inactive</option>
+								<option value="Active">True</option>
+								<option value="Inactive">False</option>
 							</select>
 						</div>
 					</div>
