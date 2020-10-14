@@ -10,17 +10,26 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'INSERT INTO Person (PersonalID, firstName, lastName, street, city, state, zipcode, email, dateofBirth, startDate, gender, position, radioNumber, stationNumber, isActive) 
-  values
-  (?, ?, ?, ?, ?);'
+  'INSERT INTO Person (firstName, lastName, street, city, state, zipcode, email, dateofBirth, startDate, gender, position, radioNumber, stationNumber, isActive)
+  VALUES
+  ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);'
 );
 
 $stmt->execute([
-  $guid,
+  $_POST['lastName'],
+  $_POST['dob'],
+  $_POST['sexAtBirth'],
   $_POST['firstName'],
   $_POST['lastName'],
   $_POST['dob'],
-  $_POST['sexAtBirth']
+  $_POST['sexAtBirth'],
+  $_POST['firstName'],
+  $_POST['lastName'],
+  $_POST['dob'],
+  $_POST['sexAtBirth'],
+  $_POST['firstName'],
+  $_POST['lastName'],
+  $_POST['dob']
 ]);
 
 // If needed, get auto-generated PK from DB
