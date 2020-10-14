@@ -10,8 +10,9 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'INSERT INTO Patient (patientGuid, firstName, lastName, dob, sexAtBirth)
-  VALUES (?, ?, ?, ?, ?)'
+  'INSERT INTO Person (PersonalID, firstName, lastName, street, city, state, zipcode, email, dateofBirth, startDate, gender, position, radioNumber, stationNumber, isActive) 
+  values
+  (?, ?, ?, ?, ?);'
 );
 
 $stmt->execute([
