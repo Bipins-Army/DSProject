@@ -49,7 +49,7 @@ var app = new Vue({
 
       // TODO: Validate the data!
 
-      fetch('api/records/post.php', {
+      fetch('app/public/api/records/post.php', {
         method:'POST',
         body: JSON.stringify(this.newPtForm),
         headers: {
