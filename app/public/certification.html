@@ -68,22 +68,22 @@ delete member certifications.</p>
 
 
 				<h2>Enter a New Certification</h2>
-				<form>
+				<form v-on:submit.prevent="createCertification()">
 				  <div class="form-group">
 				    <label for="CertificationID">Certification ID</label>
 				    <input type="text" class="form-control" id="CertificationID" aria-describedby="CertificationID" placeholder="Enter a Certification ID">
 				  </div>
 				  <div class="form-group">
 				    <label for="certifyingAgency">Certifying Agency</label>
-				    <input type="text" class="form-control" id="certifyingAgency" placeholder="Agency Name, e.g American Heart Association">
+				    <input type="text" v-model="newCertification.certifyingAgency" class="form-control" id="certifyingAgency" placeholder="Agency Name, e.g American Heart Association">
 				  </div>
 					<div class="form-group">
 				    <label for="certificationName">Certification Name</label>
-				    <input type="text" class="form-control" id="certificationName" placeholder="Certification Name, e.g CPR">
+				    <input type="text" v-model="newCertification.certificationName" class="form-control" id="certificationName" placeholder="Certification Name, e.g CPR">
 				  </div>
 					<div class="form-group">
 				    <label for="standardExpiry">Standard Expiry</label>
-				    <input type="text" class="form-control" id="standardExpiry" placeholder="Expiry Year">
+				    <input type="text" v-model="newCertification.standardExpiry" class="form-control" id="standardExpiry" placeholder="Expiry Year">
 				  </div>
 					</div>
 				  <button type="submit" class="btn btn-primary">Submit</button>
