@@ -12,7 +12,7 @@ $db = DbConnection::getConnection();
 $stmt = $db->prepare(
   'INSERT INTO Person (firstName, lastName, street, city, state, zipcode, email, dateofBirth, startDate, gender, position, radioNumber, stationNumber, isActive)
   VALUES
-  ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);'
+  ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
 );
 
 $stmt->execute([
@@ -39,4 +39,4 @@ $stmt->execute([
 // Here, instead of giving output, I'm redirecting to the SELECT API,
 // just in case the data changed by entering it
 header('HTTP/1.1 303 See Other');
-header('Location: ../records/?guid=' . $guid);
+header('Location: ../visits/');
