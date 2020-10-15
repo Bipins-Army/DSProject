@@ -66,31 +66,27 @@
 
 
 				<h2>Enter a New Member</h2>
-				<form>
-				  <div class="form-group">
-				    <label for="PersonalID">Personal ID</label>
-				    <input type="text" class="form-control" id="PersonalID" aria-describedby="PersonalID" placeholder="Enter Personal ID">
-				  </div>
+				<form method="post" v-on:submit.prevent="handleNewMemberForm">
 				  <div class="form-group">
 				    <label for="firstName">First Name</label>
-				    <input type="text" class="form-control" id="firstName" placeholder="First Name">
+				    <input type="text" v-model="handleNewMemberForm.firstName" class="form-control" id="firstName" placeholder="First Name">
 				  </div>
 					<div class="form-group">
 				    <label for="lastName">Last Name</label>
-				    <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+				    <input type="text" v-model="handleNewMemberForm.lastName" class="form-control" id="lastName" placeholder="Last Name">
 				  </div>
 					<div class="form-group">
 				    <label for="street">Street Address</label>
-				    <input type="text" class="form-control" id="street" placeholder="Street Address">
+				    <input type="text" v-model="handleNewMemberForm.street" class="form-control" id="street" placeholder="Street Address">
 				  </div>
 					<div class="form-group">
 				    <label for="city">City</label>
-				    <input type="text" class="form-control" id="city" placeholder="City of Residence">
+				    <input type="text" v-model="handleNewMemberForm.city" class="form-control" id="city" placeholder="City of Residence">
 				  </div>
 					<div class="form-group"> <!-- Source: https://gist.github.com/RichLogan/9903043 -->
 						<label for="state" class="col-sm-2 control-label">State</label>
 						<div class="col-sm-10">
-							<select class="form-control" id="state" name="state">
+							<select class="form-control" v-model="handleNewMemberForm.state" id="state" name="state">
 								<option value="">N/A</option>
 								<option value="AK">Alaska</option>
 								<option value="AL">Alabama</option>
@@ -149,25 +145,24 @@
 					</div>
 					<div class="form-group">
 				    <label for="zipcode">Zipcode</label>
-				    <input type="text" class="form-control" id="zipcode" placeholder="Zipcode">
+				    <input type="text" v-model="handleNewMemberForm.zipcode" class="form-control" id="zipcode" placeholder="Zipcode">
 				  </div>
 					<div class="form-group">
 				    <label for="email">Email</label>
-				    <input type="email" class="form-control" id="email" placeholder="User's Email">
+				    <input type="email" v-model="handleNewMemberForm.email" class="form-control" id="email" placeholder="User's Email">
 				  </div>
 					<div class="form-group">
 				    <label for="dateofBirth">Date of Birth</label>
-				    <input type="date" class="form-control" id="dateofBirth" placeholder="yyyy-mm-dd">
+				    <input type="date" v-model="handleNewMemberForm.dateofBirth" class="form-control" id="dateofBirth" placeholder="yyyy-mm-dd">
 				  </div>
 					<div class="form-group">
 				    <label for="startDate">Start Date</label>
-				    <input type="date" class="form-control" id="startDate" placeholder="yyyy-mm-dd">
+				    <input type="date" v-model="handleNewMemberForm.startDate" class="form-control" id="startDate" placeholder="yyyy-mm-dd">
 				  </div>
 					<div class="form-group">
 						<label for="gender" class="col-sm-2 control-label">Gender</label>
 						<div class="col-sm-10">
-							<select class="form-control" id="gender" name="gender">
-								<option value="">N/A</option>
+							<select class="form-control" v-model="handleNewMemberForm.gender" id="gender" name="gender">
 								<option value="Male">Male</option>
 								<option value="Female">Female</option>
 							</select>
@@ -175,20 +170,20 @@
 					</div>
 					<div class="form-group">
 				    <label for="position">Position</label>
-				    <input type="text" class="form-control" id="position" placeholder="Member's Position">
+				    <input type="text" v-model="handleNewMemberForm.position" class="form-control" id="position" placeholder="Member's Position">
 				  </div>
 					<div class="form-group">
 				    <label for="radioNumber">Radio Number</label>
-				    <input type="text" class="form-control" id="radioNumber" placeholder="Radio Number">
+				    <input type="text" v-model="handleNewMemberForm.radioNumber" class="form-control" id="radioNumber" placeholder="Radio Number">
 				  </div>
 					<div class="form-group">
 				    <label for="stationNumber">Station Number</label>
-				    <input type="text" class="form-control" id="stationNumber" placeholder="Station Number">
+				    <input type="text" v-model="handleNewMemberForm.stationNumber" class="form-control" id="stationNumber" placeholder="Station Number">
 				  </div>
 					<div class="form-group">
 						<label for="isActive" class="col-sm-2 control-label">Is Member Active?</label>
 						<div class="col-sm-10">
-							<select class="form-control" id="isActive" name="isActive">
+							<select class="form-control" v-model="handleNewMemberForm.isActive" id="isActive" name="isActive">
 								<option value="">N/A</option>
 								<option value="Active">True</option>
 								<option value="Inactive">False</option>
