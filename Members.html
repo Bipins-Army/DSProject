@@ -64,34 +64,28 @@
 
 				</form>
 
-
+	<form method="post" v-on:submit.prevent="handleNewPtForm" action='common.php'>
 				<h2>Enter a New Member</h2>
-				<form>
-				  <div class="form-group">
-				    <label for="PersonalID">Personal ID</label>
-				    <input type="text" class="form-control" id="PersonalID" aria-describedby="PersonalID" placeholder="Enter Personal ID">
-				  </div>
 				  <div class="form-group">
 				    <label for="firstName">First Name</label>
-				    <input type="text" class="form-control" id="firstName" placeholder="First Name">
-				  </div>
+						<input type="text" name="fname" v-model="newMemForm.firstName" class="form-control" id="fName" placeholder="First Name">
+				 	  </div>
 					<div class="form-group">
 				    <label for="lastName">Last Name</label>
-				    <input type="text" class="form-control" id="lastName" placeholder="Last Name">
-				  </div>
+						<input type="text" name="lname" v-model="newMemForm.lastName" class="form-control" id="lName" placeholder="Last Name">
+				   </div>
 					<div class="form-group">
 				    <label for="street">Street Address</label>
-				    <input type="text" class="form-control" id="street" placeholder="Street Address">
+						<input type="text" name="street" v-model="newMemForm.street" class="form-control" id="street" placeholder="Street Address">
 				  </div>
 					<div class="form-group">
 				    <label for="city">City</label>
-				    <input type="text" class="form-control" id="city" placeholder="City of Residence">
+						<input type="text" name="city" v-model="newMemForm.city" class="form-control" id="city" placeholder="City">
 				  </div>
 					<div class="form-group"> <!-- Source: https://gist.github.com/RichLogan/9903043 -->
 						<label for="state" class="col-sm-2 control-label">State</label>
 						<div class="col-sm-10">
-							<select class="form-control" id="state" name="state">
-								<option value="">N/A</option>
+							<select class="form-control" id="state" name="state" v-model="newMemForm.state">
 								<option value="AK">Alaska</option>
 								<option value="AL">Alabama</option>
 								<option value="AR">Arkansas</option>
@@ -149,25 +143,24 @@
 					</div>
 					<div class="form-group">
 				    <label for="zipcode">Zipcode</label>
-				    <input type="text" class="form-control" id="zipcode" placeholder="Zipcode">
-				  </div>
+						<input type="text" name="zip" v-model="newMemForm.zip" class="form-control" id="zip" placeholder="Zip Code">
+ 					  </div>
 					<div class="form-group">
 				    <label for="email">Email</label>
-				    <input type="email" class="form-control" id="email" placeholder="User's Email">
-				  </div>
+						<input type="text" name="email" v-model="newMemForm.email" class="form-control" id="email" placeholder="email">
+				 		  </div>
 					<div class="form-group">
 				    <label for="dateofBirth">Date of Birth</label>
-				    <input type="date" class="form-control" id="dateofBirth" placeholder="yyyy-mm-dd">
-				  </div>
+						<input type="text" name="dob" v-model="newMemForm.dob" class="form-control" id="dob" placeholder="yyyy-mm-dd">
+ 					  </div>
 					<div class="form-group">
 				    <label for="startDate">Start Date</label>
-				    <input type="date" class="form-control" id="startDate" placeholder="yyyy-mm-dd">
-				  </div>
+						<input type="text" name="startDate" v-model="newMemForm.startDate" class="form-control" id="startDate" placeholder="yyyy-mm-dd">
+ 				  </div>
 					<div class="form-group">
 						<label for="gender" class="col-sm-2 control-label">Gender</label>
 						<div class="col-sm-10">
-							<select class="form-control" id="gender" name="gender">
-								<option value="">N/A</option>
+							<select class="form-control" id="gender" name="gender"  v-model="newMemForm.gender" >
 								<option value="Male">Male</option>
 								<option value="Female">Female</option>
 							</select>
@@ -175,21 +168,21 @@
 					</div>
 					<div class="form-group">
 				    <label for="position">Position</label>
-				    <input type="text" class="form-control" id="position" placeholder="Member's Position">
-				  </div>
+						<input type="text" name="postion" v-model="newMemForm.position" class="form-control" id="position" placeholder="Position">
+  </div>
 					<div class="form-group">
 				    <label for="radioNumber">Radio Number</label>
-				    <input type="text" class="form-control" id="radioNumber" placeholder="Radio Number">
-				  </div>
+						<input type="text" name="Radio_num" v-model="newMemForm.Radio_num" class="form-control" id="Radio_num" placeholder="Radio_num">
+ </div>
 					<div class="form-group">
 				    <label for="stationNumber">Station Number</label>
-				    <input type="text" class="form-control" id="stationNumber" placeholder="Station Number">
-				  </div>
+						<input type="text" name="stationNumber" v-model="newMemForm.stationNumber" class="form-control" id="stationNumber" placeholder="Station #">
+	  </div>
 					<div class="form-group">
 						<label for="isActive" class="col-sm-2 control-label">Is Member Active?</label>
 						<div class="col-sm-10">
-							<select class="form-control" id="isActive" name="isActive">
-								<option value="">N/A</option>
+							<select class="form-control" id="isActive" name="isActive" v-model="newMemForm.active" >
+
 								<option value="Active">True</option>
 								<option value="Inactive">False</option>
 							</select>

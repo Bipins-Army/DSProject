@@ -1,0 +1,14 @@
+{
+    "name": "iu-msis/team14/DSProject",
+    "description": "An in-class example project",
+    "license": "private",
+    "authors": [{
+        "name": "Braden Scott"
+    }],
+    "require": {
+      "ramsey/uuid": "^4.1"
+    },
+    "autoload": {
+        "classmap": ["class/DbConnection.php"]
+    }
+}
