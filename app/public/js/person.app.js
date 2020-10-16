@@ -83,8 +83,6 @@ var app = new Vue({
       isActive:''
     }
   }
-
-
 },
 created() {
   this.fetchUser();
