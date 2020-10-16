@@ -1,7 +1,8 @@
 var app = new Vue({
   el: '#Person_Page',
   data: {
-    Person: [{
+    persons: [{
+      personalID:'',
       firstName:'',
       lastName:'',
       street:'',
@@ -30,8 +31,8 @@ var app = new Vue({
       });
     },
     createPerson(){
-      //make a line for getting the // ID
-      fetch('api/Person/get_person.php',{
+      this.newPerson.PersonalID = (this.newPerson.firstName.substring(0,1,2,3,4,5,6,7,8,9,10,11,12)+this.newPerson.lastName++this.newPerson.lastName).toLowerCase();
+      fetch('api/person/create_person.php',{
       method:'POST',
       body: JSON.stringify(this.newPerson),
       headers: {
@@ -41,13 +42,13 @@ var app = new Vue({
     .then( response => response.json())
     .then( json => {
       console.log("Returned from post:", json);
-      this.certification.push(json[0]);
-      this.newCertification = this.newCertificationData();
+      this.person.push(json[0]);
+      this.newPerson = this.newPersonData();
     });
     console.log("Creating (POSTING)...!");
     console.log(this.newPerson);
   },
-  newCertificationData() {
+  newPersonData() {
     return {
       certifyingAgency: "",
       certificationName: "",
