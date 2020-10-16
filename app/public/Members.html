@@ -54,46 +54,41 @@
 
 				<!-- Main -->
 				<h2>View Existing Members</h2>
-				
+
 					<div class="container-fluid">
 						<div class="row" id='Persons'>
 						<span class="id">ID: {{ Person.PersonalID}}</span>,<br/>
-						<span class="firstName">ID: {{ Person.firstName}}</span>,
-						<span class="lastName">ID: {{ Person.lastName}}</span>,
-						<span class="firstName">ID: {{ Person.firstName}}</span>,
-						<span class="firstName">ID: {{ Person.firstName}}</span>,
-						<span class="firstName">ID: {{ Person.firstName}}</span>,
-						<span class="firstName">ID: {{ Person.firstName}}</span>,
-						<span class="firstName">ID: {{ Person.firstName}}</span>,
-						<span class="firstName">ID: {{ Person.firstName}}</span>,
-						<span class="firstName">ID: {{ Person.firstName}}</span>,
-						<span class="firstName">ID: {{ Person.firstName}}</span>,
-					</div>
+						<span class="firstName"> {{ Person.firstName}}</span>,
+						<span class="lastName"> {{ Person.lastName}}</span>,
+						<span class="street"> {{ Person.street}}</span>,
+						<span class="city"> {{ Person.city}}</span>,
+						<span class="state"> {{ Person.state}}</span>,
+						<span class="zipcode"> {{ Person.zipcode}}</span>,
+						<span class="email">{{ Person.email}}</span>,
+						<span class="dateofBirth"> {{ Person.dateofBirth}}</span>,
+						<span class="startDate"> {{ Person.startDate}}</span>,
+						<span class="gender"> {{ Person.gender}}</span>,
+						<span class="position"> {{ Person.position}}</span>,
+						<span class="radioNumber"> {{ Person.radioNumber}}</span>,
+						<span class="stationNumber"> {{ Person.stationNumber}}</span>,
+						<span class="isActive"> {{ Person.isActive}}</span>,
+					</div> <br/>
 
 				</form>
 
 
 				<h2>Enter a New Member</h2>
-				<form method="post" v-on:submit.prevent="handleNewMemberForm">
-				  <div class="form-group">
+				<form method="post" v-on:submit.prevent="handleNewMemberForm()">
+				  <div class="person">
 				    <label for="firstName">First Name</label>
 				    <input type="text" v-model="handleNewMemberForm.firstName" class="form-control" id="firstName" placeholder="First Name">
-				  </div>
-					<div class="form-group">
 				    <label for="lastName">Last Name</label>
 				    <input type="text" v-model="handleNewMemberForm.lastName" class="form-control" id="lastName" placeholder="Last Name">
-				  </div>
-					<div class="form-group">
 				    <label for="street">Street Address</label>
 				    <input type="text" v-model="handleNewMemberForm.street" class="form-control" id="street" placeholder="Street Address">
-				  </div>
-					<div class="form-group">
 				    <label for="city">City</label>
 				    <input type="text" v-model="handleNewMemberForm.city" class="form-control" id="city" placeholder="City of Residence">
-				  </div>
-					<div class="form-group"> <!-- Source: https://gist.github.com/RichLogan/9903043 -->
-						<label for="state" class="col-sm-2 control-label">State</label>
-						<div class="col-sm-10">
+				  	<label for="state" class="col-sm-2 control-label">State</label>
 							<select class="form-control" v-model="handleNewMemberForm.state" id="state" name="state">
 								<option value="AK">Alaska</option>
 								<option value="AL">Alabama</option>
@@ -148,57 +143,41 @@
 								<option value="WV">West Virginia</option>
 								<option value="WY">Wyoming</option>
 							</select>
-						</div>
-					</div>
-					<div class="form-group">
+
 				    <label for="zipcode">Zipcode</label>
 				    <input type="text" v-model="handleNewMemberForm.zipcode" class="form-control" id="zipcode" placeholder="Zipcode">
-				  </div>
-					<div class="form-group">
+
 				    <label for="email">Email</label>
 				    <input type="email" v-model="handleNewMemberForm.email" class="form-control" id="email" placeholder="User's Email">
-				  </div>
-					<div class="form-group">
+
 				    <label for="dateofBirth">Date of Birth</label>
 				    <input type="date" v-model="handleNewMemberForm.dateofBirth" class="form-control" id="dateofBirth" placeholder="yyyy-mm-dd">
-				  </div>
-					<div class="form-group">
+
 				    <label for="startDate">Start Date</label>
 				    <input type="date" v-model="handleNewMemberForm.startDate" class="form-control" id="startDate" placeholder="yyyy-mm-dd">
-				  </div>
-					<div class="form-group">
+
 						<label for="gender" class="col-sm-2 control-label">Gender</label>
-						<div class="col-sm-10">
 							<select class="form-control" v-model="handleNewMemberForm.gender" id="gender" name="gender">
 								<option value="Male">Male</option>
 								<option value="Female">Female</option>
 							</select>
-						</div>
-					</div>
-					<div class="form-group">
 				    <label for="position">Position</label>
 				    <input type="text" v-model="handleNewMemberForm.position" class="form-control" id="position" placeholder="Member's Position">
-				  </div>
-					<div class="form-group">
 				    <label for="radioNumber">Radio Number</label>
 				    <input type="text" v-model="handleNewMemberForm.radioNumber" class="form-control" id="radioNumber" placeholder="Radio Number">
-				  </div>
-					<div class="form-group">
 				    <label for="stationNumber">Station Number</label>
 				    <input type="text" v-model="handleNewMemberForm.stationNumber" class="form-control" id="stationNumber" placeholder="Station Number">
-				  </div>
-					<div class="form-group">
-						<label for="isActive" class="col-sm-2 control-label">Is Member Active?</label>
-						<div class="col-sm-10">
+				  	<label for="isActive" class="col-sm-2 control-label">Is Member Active?</label>
+
 							<select class="form-control" v-model="handleNewMemberForm.isActive" id="isActive" name="isActive">
 								<option value="Active">True</option>
 								<option value="Inactive">False</option>
 							</select>
 						</div>
-					</div>
-				  <button type="submit" class="btn btn-primary">Submit</button>
-				</form>
 
+				  <input type="submit" class="button" value="Create Person">
+				</form>
+</div>
 
 				<!-- Footer -->
 				<footer id="footer">
