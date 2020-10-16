@@ -17,8 +17,24 @@ var app = new Vue({
       radioNumber:'',
       stationNumber:'',
       isActive:''
-    }]
-
+    }],
+    newPerson: {
+      personalID:'',
+      firstName:'',
+      lastName:'',
+      street:'',
+      city:'',
+      state:'',
+      zipcode:'',
+      email:'',
+      dateofBirth:'',
+      startDate:'',
+      gender:'',
+      position:'',
+      radioNumber:'',
+      stationNumber:'',
+      isActive:''
+    }
   },
 
   methods: {
@@ -31,7 +47,7 @@ var app = new Vue({
       });
     },
     createPerson(){
-      this.newPerson.PersonalID = (this.newPerson.firstName.substring(0,1,2,3,4,5,6,7,8,9,10,11,12)+this.newPerson.lastName++this.newPerson.lastName).toLowerCase();
+      this.newPerson.PersonalID = (this.newPerson.firstName.substring(0,1,2,3,4,5,6,7,8,9,10,11,12)+this.newPerson.lastName+this.newPerson.street).toLowerCase();
       fetch('api/person/create_person.php',{
       method:'POST',
       body: JSON.stringify(this.newPerson),
