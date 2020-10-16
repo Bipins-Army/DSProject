@@ -34,7 +34,7 @@ var app = new Vue({
     .then( response => response.json())
     .then( json => {
       console.log("Returned from post:", json);
-      this.certification.push(json[0]);
+      this.certification = json;
       this.newCertification = this.newCertificationData();
     });
     console.log("Creating (POSTING)...!");
@@ -44,7 +44,7 @@ var app = new Vue({
     return {
       certifyingAgency: "",
       certificationName: "",
-      standardExpiry: "",
+      standardExpiry: ""
     }
   }
 },

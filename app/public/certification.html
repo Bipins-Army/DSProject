@@ -68,10 +68,10 @@ delete member certifications.</p>
 
 				</form>
 
-
+				<div id='certificationPage'>
 				<h2>Enter a New Certification</h2>
 				<form method="NewCertForm" v-on:submit.prevent="createCertification()">
-				  <div class="newCertification" id='certificationPage'>
+				  <div class="newCertification">
 
 				    <label for="certifyingAgency">Certifying Agency</label>
 				    <input type="text" v-model="newCertification.certifyingAgency" class="form-control" id="certifyingAgency" placeholder="Agency Name, e.g American Heart Association">
@@ -84,6 +84,7 @@ delete member certifications.</p>
 
 				  <input type="submit" class="button" value = "Create Certification">
 				</form>
+</div>
 </div>
 				<!-- Footer -->
 				<footer id="footer">
