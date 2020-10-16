@@ -59,6 +59,6 @@ var app = new Vue({
 
 },
 created() {
-  this.fetchPerson();
+  this.fetchUser();
 }
 });
