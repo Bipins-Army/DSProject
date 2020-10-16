@@ -22,12 +22,12 @@ var app = new Vue({
   },
 
   methods: {
-    fetchUser()) {
+    fetchUser() {
       fetch('api/person/')
       .then(response => response.json())
       .then(json => {
-        this.Person=json;
-        console.log(this.Person);
+        this.persons=json;
+        console.log(this.persons);
       });
     },
     createPerson(){
