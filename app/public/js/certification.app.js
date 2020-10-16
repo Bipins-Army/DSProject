@@ -24,9 +24,9 @@ var app = new Vue({
     },
     createCertification(){
       //make a line for getting the // ID
-      fetch('api/Certification/create2.php',{
+      fetch('api/Certification/create_cert.php',{
       method:'POST',
-      body: JSON.stringify(this.newUser),
+      body: JSON.stringify(this.newCertification),
       headers: {
         "CONTENT_TYPE": "application/json; charset=utf-8"
       }}

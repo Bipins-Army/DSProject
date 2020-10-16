@@ -70,8 +70,8 @@ delete member certifications.</p>
 
 
 				<h2>Enter a New Certification</h2>
-				<form v-on:submit.prevent="createCertification()">
-				  <div class="newCertification"
+				<form method="NewCertForm" v-on:submit.prevent="createCertification()">
+				  <div class="newCertification" id='certificationPage'>
 
 				    <label for="certifyingAgency">Certifying Agency</label>
 				    <input type="text" v-model="newCertification.certifyingAgency" class="form-control" id="certifyingAgency" placeholder="Agency Name, e.g American Heart Association">
@@ -82,10 +82,9 @@ delete member certifications.</p>
 				    <label for="standardExpiry">Standard Expiry</label>
 				    <input type="text" v-model="newCertification.standardExpiry" class="form-control" id="standardExpiry" placeholder="Expiry Year">
 
-				  <button type="submit" class="btn btn-primary">Submit</button>
+				  <input type="submit" class="button" value = "Create Certification">
 				</form>
 </div>
-
 				<!-- Footer -->
 				<footer id="footer">
 					<div class="inner">
@@ -101,6 +100,9 @@ delete member certifications.</p>
 				</footer>
 
 		<!-- Scripts -->
+		<script type="JavaScript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="js/Certification.app.js"></script>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.scrolly.min.js"></script>
 		<script src="js/jquery.scrollex.min.js"></script>
@@ -108,7 +110,6 @@ delete member certifications.</p>
 		<script src="js/breakpoints.min.js"></script>
 		<script src="js/util.js"></script>
 		<script src="js/main.js"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
 
 	</body>
