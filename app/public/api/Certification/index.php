@@ -10,9 +10,9 @@ $vars = [];
 $stmt = $db->prepare($sql);
 $stmt->execute($vars);
 
-$patients = $stmt->fetchAll();
+$cert = $stmt->fetchAll();
 
-$json = json_encode($patients, JSON_PRETTY_PRINT);
+$json = json_encode($cert, JSON_PRETTY_PRINT);
 
 header('Content-Type: application/json');
 echo $json;
