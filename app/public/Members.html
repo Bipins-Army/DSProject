@@ -84,8 +84,8 @@
 </div>
 				<h2>Enter a New Member</h2>
 
-				<form method="post" v-on:submit.prevent="createPerson()">
-				  <div class="newPerson">
+				<form method="post" v-on:submit.prevent="createPersons()">
+				  <div class="persons">
 				    <label for="firstName">First Name</label>
 				    <input type="text" v-model="createPerson.firstName" class="form-control" id="firstName" placeholder="First Name">
 				    <label for="lastName">Last Name</label>
