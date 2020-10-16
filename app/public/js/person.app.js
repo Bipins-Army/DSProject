@@ -18,7 +18,7 @@ var app = new Vue({
       stationNumber:'',
       isActive:''
     }],
-    createPerson: {
+    createPersonList: {
       personalID:'',
       firstName:'',
       lastName:'',
