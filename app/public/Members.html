@@ -85,100 +85,44 @@
 				<h2>Enter a New Member</h2>
 
 				<form method="post" v-on:submit.prevent="createPerson()">
-				  <div class="newPerson">
+				  <div class="persons">
 				    <label for="firstName">First Name</label>
-				    <input type="text" v-model="createPerson.firstName" class="form-control" id="firstName" placeholder="First Name">
+				    <input type="text" v-model="createPersonList.firstName" class="form-control" id="firstName" placeholder="First Name">
 				    <label for="lastName">Last Name</label>
-				    <input type="text" v-model="createPerson.lastName" class="form-control" id="lastName" placeholder="Last Name">
+				    <input type="text" v-model="createPersonList.lastName" class="form-control" id="lastName" placeholder="Last Name">
 				    <label for="street">Street Address</label>
-				    <input type="text" v-model="createPerson.street" class="form-control" id="street" placeholder="Street Address">
+				    <input type="text" v-model="createPersonList.street" class="form-control" id="street" placeholder="Street Address">
 				    <label for="city">City</label>
-				    <input type="text" v-model="createPerson.city" class="form-control" id="city" placeholder="City of Residence">
+				    <input type="text" v-model="createPersonList.city" class="form-control" id="city" placeholder="City of Residence">
 				  	<label for="state" class="col-sm-2 control-label">State</label>
-							<select class="form-control" v-model="createPerson.state" id="state" name="state">
-								<option value="AK">Alaska</option>
-								<option value="AL">Alabama</option>
-								<option value="AR">Arkansas</option>
-								<option value="AZ">Arizona</option>
-								<option value="CA">California</option>
-								<option value="CO">Colorado</option>
-								<option value="CT">Connecticut</option>
-								<option value="DC">District of Columbia</option>
-								<option value="DE">Delaware</option>
-								<option value="FL">Florida</option>
-								<option value="GA">Georgia</option>
-								<option value="HI">Hawaii</option>
-								<option value="IA">Iowa</option>
-								<option value="ID">Idaho</option>
-								<option value="IL">Illinois</option>
-								<option value="IN">Indiana</option>
-								<option value="KS">Kansas</option>
-								<option value="KY">Kentucky</option>
-								<option value="LA">Louisiana</option>
-								<option value="MA">Massachusetts</option>
-								<option value="MD">Maryland</option>
-								<option value="ME">Maine</option>
-								<option value="MI">Michigan</option>
-								<option value="MN">Minnesota</option>
-								<option value="MO">Missouri</option>
-								<option value="MS">Mississippi</option>
-								<option value="MT">Montana</option>
-								<option value="NC">North Carolina</option>
-								<option value="ND">North Dakota</option>
-								<option value="NE">Nebraska</option>
-								<option value="NH">New Hampshire</option>
-								<option value="NJ">New Jersey</option>
-								<option value="NM">New Mexico</option>
-								<option value="NV">Nevada</option>
-								<option value="NY">New York</option>
-								<option value="OH">Ohio</option>
-								<option value="OK">Oklahoma</option>
-								<option value="OR">Oregon</option>
-								<option value="PA">Pennsylvania</option>
-								<option value="PR">Puerto Rico</option>
-								<option value="RI">Rhode Island</option>
-								<option value="SC">South Carolina</option>
-								<option value="SD">South Dakota</option>
-								<option value="TN">Tennessee</option>
-								<option value="TX">Texas</option>
-								<option value="UT">Utah</option>
-								<option value="VA">Virginia</option>
-								<option value="VT">Vermont</option>
-								<option value="WA">Washington</option>
-								<option value="WI">Wisconsin</option>
-								<option value="WV">West Virginia</option>
-								<option value="WY">Wyoming</option>
-							</select>
+						<input type="text" v-model="createPersonList.state" class="form-control" id="state" placeholder="abbv">
 
 				    <label for="zipcode">Zipcode</label>
-				    <input type="text" v-model="createPerson.zipcode" class="form-control" id="zipcode" placeholder="Zipcode">
+				    <input type="text" v-model="createPersonList.zipcode" class="form-control" id="zipcode" placeholder="Zipcode">
 
 				    <label for="email">Email</label>
-				    <input type="email" v-model="createPerson.email" class="form-control" id="email" placeholder="User's Email">
+				    <input type="email" v-model="createPersonList.email" class="form-control" id="email" placeholder="User's Email">
 
 				    <label for="dateofBirth">Date of Birth</label>
-				    <input type="text" v-model="createPerson.dateofBirth" class="form-control" id="dateofBirth" placeholder="yyyy-mm-dd">
+				    <input type="text" v-model="createPersonList.dateofBirth" class="form-control" id="dateofBirth" placeholder="yyyy-mm-dd">
 
 				    <label for="startDate">Start Date</label>
-				    <input type="text" v-model="createPerson.startDate" class="form-control" id="startDate" placeholder="yyyy-mm-dd">
+				    <input type="text" v-model="createPersonList.startDate" class="form-control" id="startDate" placeholder="yyyy-mm-dd">
 
 						<label for="gender" class="col-sm-2 control-label">Gender</label>
-							<select class="form-control" v-model="createPerson.gender" id="gender" name="gender">
-								<option value="Male">Male</option>
-								<option value="Female">Female</option>
-							</select>
+						<input type="text" v-model="createPersonList.gender" class="form-control" id="gender" placeholder="male or female">
+
 				    <label for="position">Position</label>
-				    <input type="text" v-model="createPerson.position" class="form-control" id="position" placeholder="Member's Position">
+				    <input type="text" v-model="createPersonList.position" class="form-control" id="position" placeholder="Member's Position">
 				    <label for="radioNumber">Radio Number</label>
-				    <input type="text" v-model="createPerson.radioNumber" class="form-control" id="radioNumber" placeholder="Radio Number">
+				    <input type="text" v-model="createPersonList.radioNumber" class="form-control" id="radioNumber" placeholder="Radio Number">
 				    <label for="stationNumber">Station Number</label>
-				    <input type="text" v-model="createPerson.stationNumber" class="form-control" id="stationNumber" placeholder="Station Number">
+				    <input type="text" v-model="createPersonList.stationNumber" class="form-control" id="stationNumber" placeholder="Station Number">
 				  	<label for="isActive" class="col-sm-2 control-label">Is Member Active?</label>
 
-							<select class="form-control" v-model="createPerson.isActive" id="isActive" name="isActive">
-								<option value="Active">True</option>
-								<option value="Inactive">False</option>
-							</select>
+						<input type="text" v-model="createPersonList.isActive" class="form-control" id="isActive" placeholder="true or false">
+
+
 
 				  <input type="submit" class="button" value="Create Person">
 				</form>
