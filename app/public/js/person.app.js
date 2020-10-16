@@ -47,7 +47,6 @@ var app = new Vue({
       });
     },
     createPerson(){
-
       fetch('api/person/create_person.php',{
       method:'POST',
       body: JSON.stringify(this.createPersonList),
