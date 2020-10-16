@@ -19,7 +19,7 @@ var app = new Vue({
       isActive:''
     }],
     newPerson: {
-      personalID:'',
+      
       firstName:'',
       lastName:'',
       street:'',
