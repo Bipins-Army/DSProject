@@ -47,8 +47,8 @@ var app = new Vue({
       });
     },
     createPerson(){
-      newPerson.personalID = newPerson.personalID,
-        fetch('api/person/create_person.php',{
+
+      fetch('api/person/create_person.php',{
       method:'POST',
       body: JSON.stringify(this.createPersonList),
       headers: {
