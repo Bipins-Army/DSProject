@@ -1,30 +1,37 @@
 var app = new Vue({
-  el: '#certificationPage',
+  el: '#Person_Page',
   data: {
-    certification: [{
-      certifyingAgency: "",
-      certificationName: "",
-      standardExpiry: "",
-    }],
-    newCertification: [{
-      certifyingAgency: "",
-      certificationName: "",
-      standardExpiry: "",
-    }],
+    Person: [{
+      firstName:'',
+      lastName:'',
+      street:'',
+      city:'',
+      state:'',
+      zipcode:'',
+      email:'',
+      dateofBirth:'',
+      startDate:'',
+      gender:'',
+      position:'',
+      radioNumber:'',
+      stationNumber:'',
+      isActive:''
+    }]
+
   },
 
   methods: {
-    fetchCertification() {
-      fetch('api/Certification/')
+    fetchUser()) {
+      fetch('api/person/')
       .then(response => response.json())
       .then(json => {
-        this.certification=json;
-        console.log(this.certification);
+        this.Person=json;
+        console.log(this.Person);
       });
     },
-    createCertification(){
+    createPerson(){
       //make a line for getting the // ID
-      fetch('api/Certification/create2.php',{
+      fetch('api/Person/get_person.php',{
       method:'POST',
       body: JSON.stringify(this.newUser),
       headers: {
