@@ -29,7 +29,7 @@ var app = new Vue({
         this.persons=json;
         console.log(this.persons);
       });
-    },
+    }
 //    createPerson(){
 //      this.newPerson.PersonalID = (this.newPerson.firstName.substring(0,1,2,3,4,5,6,7,8,9,10,11,12)+this.newPerson.lastName++this.newPerson.lastName).toLowerCase();
 //      fetch('api/person/create_person.php',{
@@ -57,6 +57,7 @@ var app = new Vue({
 //  }
 //},
 
+},
 created() {
   this.fetchPerson();
 }
