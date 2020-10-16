@@ -50,7 +50,7 @@ var app = new Vue({
       newPerson.personalID = newPerson.personalID,
         fetch('api/person/create_person.php',{
       method:'POST',
-      body: JSON.stringify(this.newPerson),
+      body: JSON.stringify(this.createPersonList),
       headers: {
         "CONTENT_TYPE": "application/json; charset=utf-8"
       }}
@@ -59,14 +59,13 @@ var app = new Vue({
     .then( json => {
       console.log("Returned from post:", json);
       this.person.push(json[0]);
-     this.newPerson = this.newPersonData();
+     this.createNewPersonList = this.newPersonData();
     });
     console.log("Creating (POSTING)...!");
-    console.log(this.newPerson);
+    console.log(this.createPersonList);
   },
   newPersonData() {
     return {
-      personalID:'',
       firstName:'',
       lastName:'',
       street:'',
