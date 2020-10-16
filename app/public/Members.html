@@ -78,18 +78,18 @@
 
 
 				<h2>Enter a New Member</h2>
-				<form method="post" v-on:submit.prevent="handleNewMemberForm()">
+				<form method="post" v-on:submit.prevent="createPerson()">
 				  <div class="person">
 				    <label for="firstName">First Name</label>
-				    <input type="text" v-model="handleNewMemberForm.firstName" class="form-control" id="firstName" placeholder="First Name">
+				    <input type="text" v-model="createPerson.firstName" class="form-control" id="firstName" placeholder="First Name">
 				    <label for="lastName">Last Name</label>
-				    <input type="text" v-model="handleNewMemberForm.lastName" class="form-control" id="lastName" placeholder="Last Name">
+				    <input type="text" v-model="createPerson.lastName" class="form-control" id="lastName" placeholder="Last Name">
 				    <label for="street">Street Address</label>
-				    <input type="text" v-model="handleNewMemberForm.street" class="form-control" id="street" placeholder="Street Address">
+				    <input type="text" v-model="createPerson.street" class="form-control" id="street" placeholder="Street Address">
 				    <label for="city">City</label>
-				    <input type="text" v-model="handleNewMemberForm.city" class="form-control" id="city" placeholder="City of Residence">
+				    <input type="text" v-model="createPerson.city" class="form-control" id="city" placeholder="City of Residence">
 				  	<label for="state" class="col-sm-2 control-label">State</label>
-							<select class="form-control" v-model="handleNewMemberForm.state" id="state" name="state">
+							<select class="form-control" v-model="createPerson.state" id="state" name="state">
 								<option value="AK">Alaska</option>
 								<option value="AL">Alabama</option>
 								<option value="AR">Arkansas</option>
@@ -145,31 +145,31 @@
 							</select>
 
 				    <label for="zipcode">Zipcode</label>
-				    <input type="text" v-model="handleNewMemberForm.zipcode" class="form-control" id="zipcode" placeholder="Zipcode">
+				    <input type="text" v-model="createPerson.zipcode" class="form-control" id="zipcode" placeholder="Zipcode">
 
 				    <label for="email">Email</label>
-				    <input type="email" v-model="handleNewMemberForm.email" class="form-control" id="email" placeholder="User's Email">
+				    <input type="email" v-model="createPerson.email" class="form-control" id="email" placeholder="User's Email">
 
 				    <label for="dateofBirth">Date of Birth</label>
-				    <input type="date" v-model="handleNewMemberForm.dateofBirth" class="form-control" id="dateofBirth" placeholder="yyyy-mm-dd">
+				    <input type="date" v-model="createPerson.dateofBirth" class="form-control" id="dateofBirth" placeholder="yyyy-mm-dd">
 
 				    <label for="startDate">Start Date</label>
-				    <input type="date" v-model="handleNewMemberForm.startDate" class="form-control" id="startDate" placeholder="yyyy-mm-dd">
+				    <input type="date" v-model="createPerson.startDate" class="form-control" id="startDate" placeholder="yyyy-mm-dd">
 
 						<label for="gender" class="col-sm-2 control-label">Gender</label>
-							<select class="form-control" v-model="handleNewMemberForm.gender" id="gender" name="gender">
+							<select class="form-control" v-model="createPerson.gender" id="gender" name="gender">
 								<option value="Male">Male</option>
 								<option value="Female">Female</option>
 							</select>
 				    <label for="position">Position</label>
-				    <input type="text" v-model="handleNewMemberForm.position" class="form-control" id="position" placeholder="Member's Position">
+				    <input type="text" v-model="createPerson.position" class="form-control" id="position" placeholder="Member's Position">
 				    <label for="radioNumber">Radio Number</label>
-				    <input type="text" v-model="handleNewMemberForm.radioNumber" class="form-control" id="radioNumber" placeholder="Radio Number">
+				    <input type="text" v-model="createPerson.radioNumber" class="form-control" id="radioNumber" placeholder="Radio Number">
 				    <label for="stationNumber">Station Number</label>
-				    <input type="text" v-model="handleNewMemberForm.stationNumber" class="form-control" id="stationNumber" placeholder="Station Number">
+				    <input type="text" v-model="createPerson.stationNumber" class="form-control" id="stationNumber" placeholder="Station Number">
 				  	<label for="isActive" class="col-sm-2 control-label">Is Member Active?</label>
 
-							<select class="form-control" v-model="handleNewMemberForm.isActive" id="isActive" name="isActive">
+							<select class="form-control" v-model="createPerson.isActive" id="isActive" name="isActive">
 								<option value="Active">True</option>
 								<option value="Inactive">False</option>
 							</select>
