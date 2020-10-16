@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Report Selection</title>
+		<title>Certification</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="css/main.css" />
@@ -38,7 +38,6 @@
         </nav>
 
 
-
 				<!-- Banner -->
 				<!-- Note: The "styleN" class below should match that of the header element. -->
 					<section id="banner" class="style2">
@@ -47,32 +46,49 @@
 								<img src="css/images/pic07.jpg" alt="" />
 							</span>
 							<header class="major">
-								<h1>Select a Report to View</h1>
+								<h1>Certification</h1>
 							</header>
 							<div class="content">
+								<p>On this page you can view a list of certifications and  add, edit, or
+delete member certifications.</p>
 							</div>
 						</div>
 					</section>
 
 				<!-- Main -->
+				<h2>Person Certification maybe if I'm super lucky.</h2>
+				<div class="container-fluid">
+						<div class="row" id="">
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+								<div class="person_certification" v-for="P_C in person_certification">
+									<span class="">CertificationID : {{ P_C.CertificationID }}</span> <br/>
+									<span class="">PersonalID : {{ P_C.PersonalID }}</span> <br/>
+									<span class="">certificationStatus : {{ P_C.certificationStatus }}</span> <br/>
+									<span class="">expirationDate : {{ P_C.expirationDate }}</span>
+								</div>
 
-				<h2>Select Report Criteria</h2>
-				<form class="form-group" action="" method="get">
+
+				<h2>Enter a New Certification</h2>
+				<form v-on:submit.prevent="createCertification()">
+				  <div class="form-group">
+				    <label for="CertificationID">Certification ID</label>
+				    <input type="text" class="form-control" id="CertificationID" aria-describedby="CertificationID" placeholder="Enter a Certification ID">
+				  </div>
+				  <div class="form-group">
+				    <label for="certifyingAgency">Certifying Agency</label>
+				    <input type="text" v-model="newCertification.certifyingAgency" class="form-control" id="certifyingAgency" placeholder="Agency Name, e.g American Heart Association">
+				  </div>
 					<div class="form-group">
-						<label for="reportCriteria" class="col-sm-2 control-label">Report Criteria</label>
-						<div class="col-sm-10">
-							<select class="form-control" id="reportCriteria" name="reportCriteria">
-								<option value="expired">Expired Certification</option>
-								<option value="byStation">By Station Number</option>
-								<option value="byRadio">By Radio Number</option>
-							</select>
-						</div>
+				    <label for="certificationName">Certification Name</label>
+				    <input type="text" v-model="newCertification.certificationName" class="form-control" id="certificationName" placeholder="Certification Name, e.g CPR">
+				  </div>
+					<div class="form-group">
+				    <label for="standardExpiry">Standard Expiry</label>
+				    <input type="text" v-model="newCertification.standardExpiry" class="form-control" id="standardExpiry" placeholder="Expiry Year">
+				  </div>
 					</div>
-					<button type="button" name="button">Fetch Report</button>
+				  <button type="submit" class="btn btn-primary">Submit</button>
 				</form>
-
-
-
 
 
 				<!-- Footer -->
