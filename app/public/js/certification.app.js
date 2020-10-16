@@ -6,11 +6,11 @@ var app = new Vue({
       certificationName: "",
       standardExpiry: "",
     }],
-    newCertification: [{
+    newCertification: {
       certifyingAgency: "",
       certificationName: "",
       standardExpiry: "",
-    }],
+    },
   },
 
   methods: {

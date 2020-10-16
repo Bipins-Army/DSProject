@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Certification</title>
+		<title>Certified People</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="css/main.css" />
@@ -38,7 +38,6 @@
         </nav>
 
 
-
 				<!-- Banner -->
 				<!-- Note: The "styleN" class below should match that of the header element. -->
 					<section id="banner" class="style2">
@@ -50,41 +49,47 @@
 								<h1>Certification</h1>
 							</header>
 							<div class="content">
-								<p>On this page you can view a list of certifications and  add, edit, or
+								<p>On this page you can view a list of certified people and  add, edit, or
 delete member certifications.</p>
 							</div>
 						</div>
 					</section>
 
 				<!-- Main -->
-				<h2>Search for User's Cerfitification Informaion</h2>
-				<form class="form-group" action="index.html" method="get">
+				<h2>Person Certification maybe if I'm super lucky.</h2>
+				<div class="container-fluid">
+						<div class="row" id="">
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+								<div class="person_certification" v-for="P_C in person_certification">
+									<span class="">CertificationID : {{ P_C.CertificationID }}</span> <br/>
+									<span class="">PersonalID : {{ P_C.PersonalID }}</span> <br/>
+									<span class="">certificationStatus : {{ P_C.certificationStatus }}</span> <br/>
+									<span class="">expirationDate : {{ P_C.expirationDate }}</span>
+								</div>
+
+
+				<h2>Enter a New Peson Certification</h2>
+				<form v-on:submit.prevent="createPerson_Certification()">
+				  <div class="form-group">
+				    <label for="CertificationID">Certification ID</label>
+				    <input type="text" class="form-control" id="CertificationID" aria-describedby="CertificationID" placeholder="Enter a Certification ID">
+				  </div>
+				  <div class="form-group">
+				    <label for="PersonalID">Personal ID</label>
+				    <input type="text" v-model="newPerson_Certification.PersonalID" class="form-control" id="PersonalID" placeholder="PersonalID">
+				  </div>
 					<div class="form-group">
-						<label for="userSearch">User Search</label>
-						<input type="text" class="form-control" id="userSearch" placeholder="User's Name">
-						<button type="button" name="button">Search</button>
-
+				    <label for="certificationStatus">Certification Status</label>
+				    <input type="text" v-model="newPerson_Certification.certificationStatus" class="form-control" id="certificationStatus" placeholder="Certification Status">
+				  </div>
+					<div class="form-group">
+				    <label for="expirationDate">Expiration Date</label>
+				    <input type="text" v-model="newPerson_Certification.expirationDate" class="form-control" id="expirationDate" placeholder="Expiration Date">
+				  </div>
 					</div>
-
-				</form>
-
-
-				<h2>Enter a New Certification</h2>
-				<form v-on:submit.prevent="createCertification()">
-				  <div class="newCertification"
-
-				    <label for="certifyingAgency">Certifying Agency</label>
-				    <input type="text" v-model="newCertification.certifyingAgency" class="form-control" id="certifyingAgency" placeholder="Agency Name, e.g American Heart Association">
-
-				    <label for="certificationName">Certification Name</label>
-				    <input type="text" v-model="newCertification.certificationName" class="form-control" id="certificationName" placeholder="Certification Name, e.g CPR">
-
-				    <label for="standardExpiry">Standard Expiry</label>
-				    <input type="text" v-model="newCertification.standardExpiry" class="form-control" id="standardExpiry" placeholder="Expiry Year">
-
 				  <button type="submit" class="btn btn-primary">Submit</button>
 				</form>
-</div>
+
 
 				<!-- Footer -->
 				<footer id="footer">
