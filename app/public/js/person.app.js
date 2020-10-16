@@ -19,7 +19,6 @@ var app = new Vue({
       isActive:''
     }],
     createPersonList: {
-      personalID:'',
       firstName:'',
       lastName:'',
       street:'',
