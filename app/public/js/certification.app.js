@@ -10,12 +10,15 @@ var app = new Vue({
       certifyingAgency: "",
       certificationName: "",
       standardExpiry: "",
-    },
+    }
+  },
+  created() {
+    this.fetchCertification();
   },
 
   methods: {
     fetchCertification() {
-      fetch('api/Certification/')
+      fetch('api/Certification/index.php')
       .then(response => response.json())
       .then(json => {
         this.certification=json;
@@ -34,22 +37,13 @@ var app = new Vue({
     .then( response => response.json())
     .then( json => {
       console.log("Returned from post:", json);
-      this.certification = json;
+      this.certification.push(json[0]);
       this.newCertification = this.newCertificationData();
     });
     console.log("Creating (POSTING)...!");
     console.log(this.newCertification);
   },
-  newCertificationData() {
-    return {
-      certifyingAgency: "",
-      certificationName: "",
-      standardExpiry: ""
-    }
+
+    
   }
-},
-created() {
-  this.fetchCertification();
-}
-}
-);
+})

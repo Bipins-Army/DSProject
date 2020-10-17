@@ -35,14 +35,18 @@ var app = new Vue({
       isActive:''
     }
   },
+  created() {
+    this.fetchUser();
+  },
 
   methods: {
     fetchUser() {
-      fetch('api/person/')
-      .then(response => response.json())
-      .then(json => {
-        this.persons=json;
-        console.log(this.persons);
+    console.log("reached here");
+    fetch('api/person/index.php')
+    .then(response => response.json())
+    .then(json => {
+      this.persons=json;
+    console.log(this.persons);
       });
     },
     createPerson(){
@@ -62,26 +66,8 @@ var app = new Vue({
     console.log("Creating (POSTING)...!");
     console.log(this.createPersonList);
   },
-  newPersonData() {
-    return {
-      firstName:'',
-      lastName:'',
-      street:'',
-      city:'',
-      state:'',
-      zipcode:'',
-      email:'',
-      dateofBirth:'',
-      startDate:'',
-      gender:'',
-      position:'',
-      radioNumber:'',
-      stationNumber:'',
-      isActive:''
+    formatDate(d){
+      return moment(d).format("MMMM Do YYYY")
     }
   }
-},
-created() {
-  this.fetchUser();
-}
-});
+})
