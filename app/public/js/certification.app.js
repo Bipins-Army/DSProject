@@ -14,9 +14,9 @@ var app = new Vue({
       standardExpiry: ""
     }
   },
-//  created() {
-//    this.createCertification();
-//  },
+  created() {
+   this.createCertification();
+  },
 
 //  methods: {
 //    fetchUser() {
