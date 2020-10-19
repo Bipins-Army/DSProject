@@ -3,7 +3,7 @@
     "description": "An in-class example project",
     "license": "private",
     "authors": [{
-        "name": "Braden Scott"
+        "name": "Tom Gregory"
     }],
     "require": {
       "ramsey/uuid": "^4.1"
