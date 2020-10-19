@@ -2,15 +2,17 @@ var app = new Vue({
   el: '#certificationPage',
   data: {
     certification: [{
-      certifyingAgency: "",
-      certificationName: "",
-      standardExpiry: "",
+      CertificationID:'',
+      certifyingAgency: '',
+      certificationName: '',
+      standardExpiry: ''
     }],
     newCertification: {
-      certifyingAgency: "",
-      certificationName: "",
-      standardExpiry: "",
-    },
+      CertificationID:'',
+      certifyingAgency: '',
+      certificationName: '',
+      standardExpiry: ''
+    }
   },
 
   methods: {
@@ -22,15 +24,15 @@ var app = new Vue({
         console.log(this.certification);
       });
     },
-    createCertification(){
+    createCertification( ){
       //make a line for getting the // ID
       fetch('api/Certification/create_cert.php',{
       method:'POST',
       body: JSON.stringify(this.newCertification),
       headers: {
         "CONTENT_TYPE": "application/json; charset=utf-8"
-      }}
-    )
+      }
+    })
     .then( response => response.json())
     .then( json => {
       console.log("Returned from post:", json);
@@ -42,6 +44,7 @@ var app = new Vue({
   },
   newCertificationData() {
     return {
+      CertificationID:"",
       certifyingAgency: "",
       certificationName: "",
       standardExpiry: ""
