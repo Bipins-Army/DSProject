@@ -1,12 +1,12 @@
 var app = new Vue({
   el: '#certificationPage',
   data: {
-    certification: [{
+    certification: {
       CertificationID:"",
       certifyingAgency: "",
       certificationName: "",
       standardExpiry: ""
-    }],
+    },
     newCertification: {
       CertificationID:"",
       certifyingAgency: "",
