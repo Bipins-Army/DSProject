@@ -68,20 +68,34 @@ delete member certifications.</p>
 
 				<div id='certificationPage'>
 				<h2>Enter a New Certification</h2>
-				<form method="NewCertForm" v-on:submit.prevent="createCertification()">
-			
-
+				<form id="NewCertForm" v-on:submit="createCertification()">
+						<div class="certlist">
 				    <label for="certifyingAgency">Certifying Agency</label>
 				    <input type="text" v-model="newCertification.certifyingAgency" class="form-control" id="certifyingAgency" placeholder="Agency Name, e.g American Heart Association">
-
+					</div>
+						<div class="certlist">
 				    <label for="certificationName">Certification Name</label>
 				    <input type="text" v-model="newCertification.certificationName" class="form-control" id="certificationName" placeholder="Certification Name, e.g CPR">
-
+					</div>
+						<div class="certlist">
 				    <label for="standardExpiry">Standard Expiry</label>
 				    <input type="text" v-model="newCertification.standardExpiry" class="form-control" id="standardExpiry" placeholder="Expiry Year">
+					</div>
 
 				  <input type="submit" class="button" value = "Create Certification">
 				</form>
+
+				<div class="container-fluid">
+					<div class="col-lg-15 col-md=15 col-md-15 col-sm-15 col-xs-15">
+					<div class="certification" v-for="c in certification">
+					<span class="id"> {{ c.CertificationID}}</span>,<br/>
+					<span class="firstName"> {{ c.certifyingAgency}}</span>,
+					<span class="lastName"> {{ c.certificationName}}</span>,
+					<span class="street"> {{ c.standardExpiry}}</span>,
+				</div>
+			</div>
+
+				</div>
 </div>
 </div>
 				<!-- Footer -->

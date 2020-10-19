@@ -15,18 +15,18 @@ var app = new Vue({
     }
   },
   created() {
-   this.createCertification();
+    this.fetchUser();
   },
 
-//  methods: {
-//    fetchUser() {
-//      fetch('api/Certification/index.php')
-//      .then(response => response.json())
-//      .then(json => {
-//        this.certification=json;
-//        console.log(this.certification);
-//      });
-//    },
+  methods: {
+    fetchUser() {
+      fetch('api/Certification/index.php')
+      .then(response => response.json() )
+      .then(json => {
+        this.certification=json;
+        console.log(this.certification);
+      });
+    },
     createCertification(){
       //make a line for getting the // ID
       fetch('api/Certification/create_cert.php',{
@@ -36,10 +36,10 @@ var app = new Vue({
         "CONTENT_TYPE": "application/json; charset=utf-8"
       }}
     )
-    .then( response => response.json())
+    .then( response => response.json() )
     .then( json => {
       console.log("Returned from post:", json);
-      this.certification.push(json[0]);
+      this.certification=json;
       this.newCertification = this.newCertificationData();
     });
     console.log("Creating (POSTING)...!");
@@ -54,5 +54,5 @@ newCertificationData(){
   }
 }
 
-  }
-)
+},
+})
