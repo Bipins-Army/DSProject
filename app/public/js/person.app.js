@@ -62,7 +62,7 @@ var app = new Vue({
     .then( json => {
       console.log("Returned from post:", json);
       this.persons.push(json[0]);
-     this.createNewPersonList = this.newPersonData();
+     this.createPersonList = this.newPersonData();
     });
     console.log("Creating (POSTING)...!");
     console.log(this.createPersonList);

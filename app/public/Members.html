@@ -75,15 +75,15 @@
 						<span class="position"> {{ person.position}}</span>,
 						<span class="radioNumber"> {{ person.radioNumber}}</span>,
 						<span class="stationNumber"> {{ person.stationNumber}}</span>,
-						<span class="isActive"> {{ person.isActive}}</span>,
+						<span class="isActive"> {{ person.isActive}}</span>
 					</div> <br/>
 
 				</form>
 </div>
-</div>
+
 				<h2>Enter a New Member</h2>
 
-				<form method="post" v-on:submit="createPerson()">
+				<form id="personForm" v-on:submit.prevent="createPerson()">
 				  <div class="persons">
 				    <label for="firstName">First Name</label>
 				    <input type="text" v-model="createPersonList.firstName" class="form-control" id="firstName" placeholder="First Name">
@@ -116,6 +116,7 @@
 				  <input type="submit" class="button" value="Create Person">
 				</form>
 
+</div>
 </div>
 </div>
 				<!-- Footer -->
