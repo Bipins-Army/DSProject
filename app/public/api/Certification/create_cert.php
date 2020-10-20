@@ -2,13 +2,10 @@
 
 require 'common.php';
 
-// Only need this line if we're creating GUIDs (see comments below)
 
-// Step 1: Get a datase connection from our helper class
 $db = DbConnection::getConnection();
 
-// Step 2: Create & run the query
-// Note the use of parameterized statements to avoid injection
+
 $stmt = $db->prepare(
   'INSERT INTO Certification (certifyingAgency,certificationName,standardExpiry)
   VALUES  (?, ?, ?)'

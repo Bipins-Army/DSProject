@@ -23,7 +23,7 @@
 							<a href="#menu">Menu</a>
 						</nav>
 					</header>
-
+				</div>
 				<!-- Menu -->
 				<nav id="menu">
           <ul class="links">
@@ -53,8 +53,27 @@ delete member certifications.</p>
 							</div>
 						</div>
 					</section>
-
+<div id='certificationPage'>
 				<!-- Main -->
+				<table>
+					<thead>
+						<tr>
+							<th>Certification ID</th>
+							<th>Certifiying Agency</th>
+							<th>Certification Name</th>
+							<th>Standard Expiry</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr v-for = "ct in certification">
+							<th>{{ct.CertificationID}}</th>
+							<th>{{ct.certifyingAgency}}</th>
+							<th>{{ct.certificationName}}</th>
+							<th>{{ct.standardExpiry}}</th>
+						</tr>
+					</tbody>
+				</table>
+
 				<h2>Search for User's Cerfitification Informaion</h2>
 				<form class="form-group" action="index.html" method="get">
 					<div class="form-group">
@@ -66,7 +85,7 @@ delete member certifications.</p>
 
 				</form>
 
-				<div id='certificationPage'>
+
 				<h2>Enter a New Certification</h2>
 				<form id="NewCertForm" v-on:submit.prevent="createCertification()">
 						<div class="certlist">
@@ -82,6 +101,7 @@ delete member certifications.</p>
 				    <input type="text" v-model="newCertification.standardExpiry" class="form-control" id="standardExpiry" placeholder="Expiry Year">
 					</div>
 				  <input type="submit" class="button" value = "Create Certification">
+
 				</form>
 
 				<div class="container-fluid">
