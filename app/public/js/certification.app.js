@@ -30,13 +30,13 @@ var app = new Vue({
       method:'POST',
       body: JSON.stringify(this.newCertification),
       headers: {
-        "CONTENT_TYPE": "application/json; charset=utf-8"
-      }
-    })
-    .then( response => response.json())
+        "Content-Type": "application/json; charset=utf-8"
+      }}
+    )
+    .then( response => response.json() )
     .then( json => {
       console.log("Returned from post:", json);
-      this.certification=json;
+      this.certification.push(json[0]);
       this.newCertification = this.newCertificationData();
     });
     console.log("Creating (POSTING)...!");
@@ -53,4 +53,4 @@ var app = new Vue({
 }
 
 },
-})
+)

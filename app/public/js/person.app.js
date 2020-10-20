@@ -19,6 +19,7 @@ var app = new Vue({
       isActive:''
     }],
     createPersonList: {
+      personalID:'',
       firstName:'',
       lastName:'',
       street:'',
@@ -54,14 +55,14 @@ var app = new Vue({
       method:'POST',
       body: JSON.stringify(this.createPersonList),
       headers: {
-        "CONTENT_TYPE": "application/json; charset=utf-8"
+        "Content-Type": "application/json; charset=utf-8"
       }}
     )
     .then( response => response.json())
     .then( json => {
       console.log("Returned from post:", json);
       this.persons.push(json[0]);
-     this.createNewPersonList = this.newPersonData();
+     this.createPersonList = this.newPersonData();
     });
     console.log("Creating (POSTING)...!");
     console.log(this.createPersonList);
