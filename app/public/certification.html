@@ -53,26 +53,19 @@ delete member certifications.</p>
 							</div>
 						</div>
 					</section>
-<div id='certificationPage'>
+
 				<!-- Main -->
-				<table>
-					<thead>
-						<tr>
-							<th>Certification ID</th>
-							<th>Certifiying Agency</th>
-							<th>Certification Name</th>
-							<th>Standard Expiry</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr v-for = "ct in certification">
-							<th>{{ct.CertificationID}}</th>
-							<th>{{ct.certifyingAgency}}</th>
-							<th>{{ct.certificationName}}</th>
-							<th>{{ct.standardExpiry}}</th>
-						</tr>
-					</tbody>
-				</table>
+				<div class="container-fluid">
+					<div id='certificationPage'>
+					<div class="col-lg-15 col-md=15 col-md-15 col-sm-15 col-xs-15">
+					<div class="certification" v-for="c in certification">
+					<span class="id"> {{ c.CertificationID}}</span>,<br/>
+					<span class="firstName"> {{ c.certifyingAgency}}</span>,
+					<span class="lastName"> {{ c.certificationName}}</span>,
+					<span class="street"> {{ c.standardExpiry}}</span>,
+				</div>
+			</div>
+
 
 				<h2>Search for User's Cerfitification Informaion</h2>
 				<form class="form-group" action="index.html" method="get">
@@ -104,17 +97,6 @@ delete member certifications.</p>
 
 				</form>
 
-				<div class="container-fluid">
-					<div class="col-lg-15 col-md=15 col-md-15 col-sm-15 col-xs-15">
-					<div class="certification" v-for="c in certification">
-					<span class="id"> {{ c.CertificationID}}</span>,<br/>
-					<span class="firstName"> {{ c.certifyingAgency}}</span>,
-					<span class="lastName"> {{ c.certificationName}}</span>,
-					<span class="street"> {{ c.standardExpiry}}</span>,
-				</div>
-			</div>
-
-				</div>
 </div>
 </div>
 				<!-- Footer -->
