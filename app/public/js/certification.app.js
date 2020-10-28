@@ -1,18 +1,21 @@
 var app = new Vue({
   el: '#certificationPage',
   data: {
-    certification: {
+    certification: [{
       CertificationID:'',
       certifyingAgency: '',
       certificationName: '',
       standardExpiry: ''
-    },
+    }],
     newCertification: {
       CertificationID:'',
       certifyingAgency: '',
       certificationName: '',
       standardExpiry: ''
     }
+  },
+  created() {
+    this.fetchUser();
   },
 
   methods: {
@@ -36,7 +39,7 @@ var app = new Vue({
     .then( response => response.json() )
     .then( json => {
       console.log("Returned from post:", json);
-      this.certification.push(json[0]);
+      this.certification=json;
       this.newCertification = this.newCertificationData();
     });
     console.log("Creating (POSTING)...!");
