@@ -67,6 +67,25 @@ var app = new Vue({
     console.log("Creating (POSTING)...!");
     console.log(this.createPersonList);
   },
+  newPersonData() {
+    return {
+      personalID:'',
+      firstName:'',
+      lastName:'',
+      street:'',
+      city:'',
+      state:'',
+      zipcode:'',
+      email:'',
+      dateofBirth:'',
+      startDate:'',
+      gender:'',
+      position:'',
+      radioNumber:'',
+      stationNumber:'',
+      isActive:''
+    }
+  },
     formatDate(d){
       return moment(d).format("MMMM Do YYYY")
     }
