@@ -15,7 +15,7 @@
 	<body class="is-preload">
 
 		<!-- Wrapper -->
-			<div id="wrapper">
+
 
 				<!-- Header -->
 				<!-- Note: The "styleN" class below should match that of the banner element. -->
@@ -58,39 +58,19 @@ delete member certifications.</p>
 				<!-- Main -->
 
 
-
+<div class="personCertificationPage">
 				<h2>Enter a New Peson Certification</h2>
 				<form v-on:submit.prevent="createPersonCertification()">
-				  <div class="form-group">
 				    <label for="CertificationID">Certification ID</label>
 				    <input type="text" class="form-control" id="CertificationID" aria-describedby="CertificationID" placeholder="Enter a Certification ID">
-				  </div>
-				  <div class="form-group">
 				    <label for="PersonalID">Personal ID</label>
 				    <input type="text" v-model="newPerson_Certification.PersonalID" class="form-control" id="PersonalID" placeholder="PersonalID">
-				  </div>
-					<div class="form-group">
 				    <label for="certificationStatus">Certification Status</label>
 				    <input type="text" v-model="newPerson_Certification.certificationStatus" class="form-control" id="certificationStatus" placeholder="Certification Status">
-				  </div>
-					<div class="form-group">
 				    <label for="expirationDate">Expiration Date</label>
 				    <input type="text" v-model="newPerson_Certification.expirationDate" class="form-control" id="expirationDate" placeholder="Expiration Date">
-				  </div>
-					</div>
-				  <button type="submit" class="btn btn-primary">Submit</button>
+				<input type="submit" class="button" value = "Create PersonCertification">
 				</form>
-
-				<h2>Person Certification maybe if I'm super lucky.</h2>
-				<div class="container-fluid">
-						<div class="row" id="">
-							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-								<div class="person_certification" v-for="Pin PersonCertification">
-									<span class="">CertificationID : {{ P.CertificationID }}</span> <br/>
-									<span class="">PersonalID : {{ P.PersonalID }}</span> <br/>
-									<span class="">certificationStatus : {{ P.certificationStatus }}</span> <br/>
-									<span class="">expirationDate : {{ P.expirationDate }}</span>
-								</div>
 
 				<h2> View Certification </h2>
 							<table>
@@ -129,6 +109,10 @@ delete member certifications.</p>
 				</footer>
 
 		<!-- Scripts -->
+		<script type="JavaScript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="js/person_certification.app.js"></script>
+
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.scrolly.min.js"></script>
 		<script src="js/jquery.scrollex.min.js"></script>
