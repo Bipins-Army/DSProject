@@ -59,10 +59,11 @@
 
 
 						<div class="row" id='PersonPage'>
-				<h2>Enter a New Member</h2>
+
 
 				<form id="personForm" v-on:submit.prevent="createPerson()">
 				  <div class="persons">
+							<h2>Enter a New Member</h2>
 				    <label for="firstName">First Name</label>
 				    <input type="text" v-model="createPersonList.firstName" class="form-control" id="firstName" placeholder="First Name">
 				    <label for="lastName">Last Name</label>
@@ -95,7 +96,7 @@
 				</form>
 
 </div>
-
+<div>
 <h2>View Existing Members</h2>
 <table>
 	<thead>
@@ -132,12 +133,12 @@
 			<th>{{ person.gender}}</th>
 			<th>{{ person.position}}</th>
 			<th> {{ person.radioNumber}}</th>
-			<th> person.stationNumber</th>
+			<th> {{person.stationNumber}}</th>
 			<th>{{ person.isActive}}</th>
 		</tr>
 	</tbody>
 </table>
-
+</div>
 
 
 </div>
