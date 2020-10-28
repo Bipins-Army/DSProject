@@ -29,4 +29,5 @@ $stmt->execute([
 // Here, instead of giving output, I'm redirecting to the SELECT API,
 // just in case the data changed by entering it
 header('HTTP/1.1 303 See Other');
-header('Location: ../Person_Certification/');
+header('Content-Type: application/json');
+header('Location: ../Person_Certification/?CertificationID=' . $pk);

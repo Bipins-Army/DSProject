@@ -1,30 +1,32 @@
 var app = new Vue({
-  el: '#person_certificationPage',
+  el: '#personCertificationPage',
   data: {
-    person_certification: [{
+    personCertification: [{
       CertificationID: "",
       PersonalID: "",
       certificationStatus: "",
       expirationDate: "",
     }],
-    newPerson_Certification: {
+    newPersonCertification: {
       CertificationID: "",
       PersonalID: "",
       certificationStatus: "",
       expirationDate: "",
     },
   },
-
+  created() {
+    this.fetchPersonCertification();
+  },
   methods: {
-    fetchPerson_Certification() {
+    fetchPersonCertification() {
       fetch('api/Person_Certification/')
       .then(response => response.json())
       .then(json => {
-        this.person_certification=json;
-        console.log(this.person_certification);
+        this.personCertification=json;
+        console.log(this.personCertification);
       });
     },
-    createPerson_Certification(){
+    createPersonCertification(){
       //make a line for getting the // ID
       fetch('api/Person_Certification/createPC.php',{
       method:'POST',
@@ -51,8 +53,6 @@ var app = new Vue({
     }
   }
 },
-created() {
-  this.fetchPerson_Certification();
-}
+
 }
 );

@@ -56,20 +56,11 @@ delete member certifications.</p>
 					</section>
 
 				<!-- Main -->
-				<h2>Person Certification maybe if I'm super lucky.</h2>
-				<div class="container-fluid">
-						<div class="row" id="">
-							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-								<div class="person_certification" v-for="P_C in Person_Certification">
-									<span class="">CertificationID : {{ P_C.CertificationID }}</span> <br/>
-									<span class="">PersonalID : {{ P_C.PersonalID }}</span> <br/>
-									<span class="">certificationStatus : {{ P_C.certificationStatus }}</span> <br/>
-									<span class="">expirationDate : {{ P_C.expirationDate }}</span>
-								</div>
+
 
 
 				<h2>Enter a New Peson Certification</h2>
-				<form v-on:submit.prevent="createPerson_Certification()">
+				<form v-on:submit.prevent="createPersonCertification()">
 				  <div class="form-group">
 				    <label for="CertificationID">Certification ID</label>
 				    <input type="text" class="form-control" id="CertificationID" aria-describedby="CertificationID" placeholder="Enter a Certification ID">
@@ -90,6 +81,38 @@ delete member certifications.</p>
 				  <button type="submit" class="btn btn-primary">Submit</button>
 				</form>
 
+				<h2>Person Certification maybe if I'm super lucky.</h2>
+				<div class="container-fluid">
+						<div class="row" id="">
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+								<div class="person_certification" v-for="Pin PersonCertification">
+									<span class="">CertificationID : {{ P.CertificationID }}</span> <br/>
+									<span class="">PersonalID : {{ P.PersonalID }}</span> <br/>
+									<span class="">certificationStatus : {{ P.certificationStatus }}</span> <br/>
+									<span class="">expirationDate : {{ P.expirationDate }}</span>
+								</div>
+
+				<h2> View Certification </h2>
+							<table>
+								<thead>
+									<tr>
+										<th>Certification ID</th>
+										<th>Personal ID</th>
+										<th>Certification Status</th>
+										<th>Standard Expiry</th>
+									</tr>
+								</thead>
+							<tbody>
+									<tr v-for = "P in PersonCertification">
+										<td>{{P.CertificationID}}</td>
+										<td>{{P.PersonalID}}</td>
+										<td>{{ P.certificationStatus}}</td>
+										<td>{{P.expirationDate}}</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+			</div>
 
 				<!-- Footer -->
 				<footer id="footer">
