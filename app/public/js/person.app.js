@@ -37,12 +37,11 @@ var app = new Vue({
     }
   },
   created() {
-    this.fetchUser();
+    this.fetchPUser();
   },
 
   methods: {
-    fetchUser() {
-    console.log("reached here");
+    fetchPUser() {
     fetch('api/person/index.php')
     .then(response => response.json())
     .then(json => {
