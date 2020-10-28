@@ -2,7 +2,6 @@
 
 require 'common.php';
 
-
 $db = DbConnection::getConnection();
 
 $sql = 'SELECT * FROM Person';

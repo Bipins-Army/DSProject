@@ -25,7 +25,7 @@
 							<a href="#menu">Menu</a>
 						</nav>
 					</header>
-
+				</div>
 				<!-- Menu -->
 				<nav id="menu">
 					<ul class="links">
@@ -49,8 +49,7 @@
 							<header class="major">
 								<h1>Member Search and Add</h1>
 							</header>
-							<div class="content">
-							</div>
+
 						</div>
 					</section>
 
@@ -120,21 +119,21 @@
 	</thead>
 	<tbody>
 		<tr v-for = "person in persons">
-			<th>{{ person.PersonalID}}</th>
-			<th>{{ person.firstName}}</th>
-			<th>{{ person.lastName}}</th>
-			<th>{{ person.street}}</th>
-			<th>{{  person.city}}</th>
-			<th>{{ person.state}}</th>
-			<th>{{ person.zipcode}}</th>
-			<th>{{ person.email}}</th>
-			<th> {{ person.dateofBirth}}</th>
-			<th> {{ person.startDate}}</th>
-			<th>{{ person.gender}}</th>
-			<th>{{ person.position}}</th>
-			<th> {{ person.radioNumber}}</th>
-			<th> {{person.stationNumber}}</th>
-			<th>{{ person.isActive}}</th>
+			<td>{{ person.PersonalID}}</td>
+			<td>{{ person.firstName}}</td>
+			<td>{{ person.lastName}}</td>
+			<td>{{ person.street}}</td>
+			<td>{{  person.city}}</td>
+			<td>{{ person.state}}</td>
+			<td>{{ person.zipcode}}</td>
+			<td>{{ person.email}}</td>
+			<td> {{ person.dateofBirth}}</td>
+			<td> {{ person.startDate}}</td>
+			<td>{{ person.gender}}</td>
+			<td>{{ person.position}}</td>
+			<td> {{ person.radioNumber}}</td>
+			<td> {{person.stationNumber}}</td>
+			<td>{{ person.isActive}}</td>
 		</tr>
 	</tbody>
 </table>

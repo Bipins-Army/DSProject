@@ -55,25 +55,21 @@ delete member certifications.</p>
 					</section>
 
 				<!-- Main -->
-<div id ='certificationPage'>
+<div class="row" id ='certificationPage'>
+	<form id="NewCertForm" v-on:submit.prevent="createCertification()">
+	<div class='certification'
 				<h2>Enter a New Certification</h2>
-				<form id="NewCertForm" v-on:submit.prevent="createCertification()">
-						<div class="certlist">
 				    <label for="certifyingAgency">Certifying Agency</label>
 				    <input type="text" v-model="newCertification.certifyingAgency" class="form-control" id="certifyingAgency" placeholder="Agency Name, e.g American Heart Association">
-					</div>
-						<div class="certlist">
 				    <label for="certificationName">Certification Name</label>
 				    <input type="text" v-model="newCertification.certificationName" class="form-control" id="certificationName" placeholder="Certification Name, e.g CPR">
-					</div>
-						<div class="certlist">
 				    <label for="standardExpiry">Standard Expiry</label>
 				    <input type="text" v-model="newCertification.standardExpiry" class="form-control" id="standardExpiry" placeholder="Expiry Year">
-					</div>
 				  <input type="submit" class="button" value = "Create Certification">
-
 				</form>
-
+			</div>
+<div>
+	<h2> View Certification </h2>
 				<table>
 					<thead>
 						<tr>
@@ -83,17 +79,18 @@ delete member certifications.</p>
 							<th>Standard Expiry</th>
 						</tr>
 					</thead>
-					<tbody>
+				<tbody>
 						<tr v-for = "ct in certification">
-							<th>{{ct.CertificationID}}</th>
-							<th>{{ct.certifyingAgency}}</th>
-							<th>{{ct.certificationName}}</th>
-							<th>{{ct.standardExpiry}}</th>
+							<td>{{ct.CertificationID}}</td>
+							<td>{{ct.certifyingAgency}}</td>
+							<td>{{ct.certificationName}}</td>
+							<td>{{ct.standardExpiry}}</td>
 						</tr>
 					</tbody>
 				</table>
-
-				<h2>Search for User's Cerfitification Informaion</h2>
+			</div>
+</div>
+				<!-- <h2>Search for User's Cerfitification Informaion</h2>
 				<form class="form-group" action="index.html" method="get">
 					<div class="form-group">
 						<label for="userSearch">User Search</label>
@@ -102,11 +99,11 @@ delete member certifications.</p>
 
 					</div>
 
-				</form>
+				</form> -->
 
 
 
-</div>
+
 
 				<!-- Footer -->
 				<footer id="footer">
