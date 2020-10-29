@@ -31,7 +31,7 @@
             <li><a href="certification.html">Cerfitification</a></li>
             <li><a href="Members.html">Members</a></li>
             <li><a href="Reports.html">Reports</a></li>
-						<li><a href="Person_Certification.html">Person_Certification</a></li>
+						<li><a href="Person_Certification.html">Person Certification</a></li>
 						<li><a href="phone.html">Person Phone</a></li>
           </ul>
         </nav>
@@ -46,62 +46,50 @@
 								<img src="css/images/pic07.jpg" alt="" />
 							</span>
 							<header class="major">
-								<h1>Certification</h1>
+								<h1>Person Phone</h1>
 							</header>
 							<div class="content">
-								<p>On this page you can view a list of certifications and  add, edit, or
-delete member certifications.</p>
+								<p>Call me maybe?</p>
 							</div>
 						</div>
 					</section>
 
 				<!-- Main -->
-<div class="row" id ='certificationPage'>
-	<form id="NewCertForm" v-on:submit.prevent="createCertification()">
-	<div class='certification'>
-				<h2>Enter a New Certification</h2>
-				    <label for="certifyingAgency">Certifying Agency</label>
-				    <input type="text" v-model="newCertification.certifyingAgency" class="form-control" id="certifyingAgency" placeholder="Agency Name, e.g American Heart Association">
-				    <label for="certificationName">Certification Name</label>
-				    <input type="text" v-model="newCertification.certificationName" class="form-control" id="certificationName" placeholder="Certification Name, e.g CPR">
-				    <label for="standardExpiry">Standard Expiry</label>
-				    <input type="text" v-model="newCertification.standardExpiry" class="form-control" id="standardExpiry" placeholder="Expiry Year">
-				  <input type="submit" class="button" value = "Create Certification">
+<div class="row" id ='numberPage'>
+	<form id="NewNumberForm" v-on:submit.prevent="createNumber()">
+	<div class='number'>
+				<h2>Enter a New Number</h2>
+				    <label for="PersonalID">PersonalID</label>
+				    <input type="text" v-model="newNumber.PersonalID" class="form-control" id="PersonalID" placeholder="Personal ID">
+				    <label for="type">Type</label>
+				    <input type="text" v-model="newNumber.type" class="form-control" id="type" placeholder="Type">
+				    <label for="phonenumber">Phone Number</label>
+				    <input type="text" v-model="newNumber.phonenumber" class="form-control" id="phonenumber" placeholder="000-000-0000">
+				  <input type="submit" class="button" value = "Create Number">
 
 			</div>
 <div>
-	<h2> View Certification </h2>
+	<h2> View Number </h2>
 				<table>
 					<thead>
 						<tr>
-							<th>Certification ID</th>
-							<th>Certifiying Agency</th>
-							<th>Certification Name</th>
-							<th>Standard Expiry</th>
+							<th>Personal ID</th>
+							<th>Type</th>
+							<th>Phone Number</th>
 						</tr>
 					</thead>
 				<tbody>
-						<tr v-for = "ct in certification">
-							<td>{{ct.CertificationID}}</td>
-							<td>{{ct.certifyingAgency}}</td>
-							<td>{{ct.certificationName}}</td>
-							<td>{{ct.standardExpiry}}</td>
+						<tr v-for = "n in number">
+							<td>{{n.PersonalID}}</td>
+							<td>{{n.type}}</td>
+							<td>{{n.phonenumber}}</td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
 			</form>
 </div>
-				<!-- <h2>Search for User's Cerfitification Informaion</h2>
-				<form class="form-group" action="index.html" method="get">
-					<div class="form-group">
-						<label for="userSearch">User Search</label>
-						<input type="text" class="form-control" id="userSearch" placeholder="User's Name">
-						<button type="button" name="button">Search</button>
 
-					</div>
-
-				</form> -->
 
 
 
@@ -124,7 +112,7 @@ delete member certifications.</p>
 		<!-- Scripts -->
 		<script type="JavaScript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-		<script src="js/certification.app.js"></script>
+		<script src="js/number.app.js"></script>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.scrolly.min.js"></script>
 		<script src="js/jquery.scrollex.min.js"></script>

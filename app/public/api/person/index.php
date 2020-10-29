@@ -9,7 +9,7 @@ $vars = [];
 
 if (isset($_GET['PersonalID'])) {
   // This is an example of a parameterized query
-  $sql = 'SELECT * FROM Patient WHERE PersonalID = ?';
+  $sql = 'SELECT * FROM Person WHERE PersonalID = ?';
   $vars = [ $_GET['PersonalID'] ];
 }
 
