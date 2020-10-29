@@ -8,6 +8,11 @@ $db = DbConnection::getConnection();
 $sql = 'SELECT * FROM Person_Certification';
 $vars = [];
 
+if (isset($_GET['CertificationID'])) {
+  // This is an example of a parameterized query
+  $sql = 'SELECT * FROM Patient WHERE CertificationID = ?';
+  $vars = [ $_GET['CertificationID'] ];
+}
 
 $stmt = $db->prepare($sql);
 $stmt->execute($vars);

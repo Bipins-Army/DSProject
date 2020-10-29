@@ -60,7 +60,7 @@ var app = new Vue({
     .then( response => response.json())
     .then( json => {
       console.log("Returned from post:", json);
-      this.persons.push(json[0]);
+      this.persons=json;
      this.createPersonList = this.newPersonData();
     });
     console.log("Creating (POSTING)...!");
@@ -86,7 +86,7 @@ var app = new Vue({
     }
   },
     formatDate(d){
-      return moment(d).format("MMMM Do YYYY")
+      return moment(d).format("MMMM Do YYYY");
     }
   }
 })

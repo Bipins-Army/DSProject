@@ -21,7 +21,7 @@ var app = new Vue({
   methods: {
     fetchUser() {
       fetch('api/Certification/index.php')
-      .then(response => response.json() )
+      .then(response => response.json())
       .then(json => {
         this.certification=json;
         console.log(this.certification);
@@ -39,7 +39,7 @@ var app = new Vue({
     .then( response => response.json() )
     .then( json => {
       console.log("Returned from post:", json);
-      this.certification=json;
+      this.certification.push(json[0]);
       this.newCertification = this.newCertificationData();
     });
     console.log("Creating (POSTING)...!");
