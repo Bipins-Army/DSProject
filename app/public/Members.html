@@ -156,6 +156,55 @@
 
 </div>
 
+<div id="editperson">
+<form>
+		<h2> Member Edit </h2>
+
+<div class = "row">
+	<label for="person_id">Member Id</label>
+	<input type="text" class="form-control" id="editmember_id" v-model="editperson.PersonalID" >
+	</div>
+
+	<label for="firstName">First Name</label>
+	<input type="text" v-model="editperson.firstName" class="form-control" id="firstName" placeholder="First Name">
+	<label for="lastName">Last Name</label>
+	<input type="text" v-model="editperson.lastName" class="form-control" id="lastName" placeholder="Last Name">
+	<label for="street">Street Address</label>
+	<input type="text" v-model="editperson.street" class="form-control" id="street" placeholder="Street Address">
+	<label for="city">City</label>
+	<input type="text" v-model="editperson.city" class="form-control" id="city" placeholder="City of Residence">
+	<label for="state" class="col-sm-2 control-label">State</label>
+	<input type="text" v-model="editperson.state" class="form-control" id="state" placeholder="abbv">
+	<label for="zipcode">Zipcode</label>
+	<input type="text" v-model="editperson.zipcode" class="form-control" id="zipcode" placeholder="Zipcode">
+	<label for="email">Email</label>
+	<input type="email" v-model="editperson.email" class="form-control" id="email" placeholder="User's Email">
+	<label for="dateofBirth">Date of Birth</label>
+	<input type="text" v-model="editperson.dateofBirth" class="form-control" id="dateofBirth" placeholder="yyyy-mm-dd">
+	<label for="startDate">Start Date</label>
+	<input type="text" v-model="editperson.startDate" class="form-control" id="startDate" placeholder="yyyy-mm-dd">
+	<label for="gender" class="col-sm-2 control-label">Gender</label>
+	<input type="text" v-model="editperson.gender" class="form-control" id="gender" placeholder="male or female">
+	<label for="position">Position</label>
+	<input type="text" v-model="editperson.position" class="form-control" id="position" placeholder="Member's Position">
+	<label for="radioNumber">Radio Number</label>
+	<input type="text" v-model="editperson.radioNumber" class="form-control" id="radioNumber" placeholder="Radio Number">
+	<label for="stationNumber">Station Number</label>
+	<input type="text" v-model="editperson.stationNumber" class="form-control" id="stationNumber" placeholder="Station Number">
+	<label for="isActive" class="col-sm-2 control-label">Is Member Active?</label>
+	<input type="text" v-model="editperson.isActive" class="form-control" id="isActive" placeholder="true or false">
+			<input type="text" class="form-control" id="radio" v-model="editperson.radio">
+
+
+		<div></br>
+			<!-- <input type="submit" value="Edit Member" class="button"> -->
+			<button v-on:click.prevent ="editPerson" type="submit" >Edit Member</button>
+		</div>
+
+	</form>
+
+</div>
+
 				<!-- Footer -->
 				<footer id="footer">
 					<div class="inner">
@@ -173,8 +222,8 @@
 		<!-- Scripts -->
 		<script type="JavaScript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="js/editperson.app.js"></script>
 		<script src="js/person.app.js"></script>
-
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.scrolly.min.js"></script>
 		<script src="js/jquery.scrollex.min.js"></script>
