@@ -34,7 +34,8 @@ var app = new Vue({
       radioNumber:'',
       stationNumber:'',
       isActive:''
-    }
+    },
+    PersonID:{},
   },
   created() {
     this.fetchPUser();
@@ -66,6 +67,19 @@ var app = new Vue({
     console.log("Creating (POSTING)...!");
     console.log(this.createPersonList);
   },
+  deleteMember(){
+  console.log(this.PersonID)
+  fetch('api/person/delete_mem.php', {
+      method: 'POST',
+      body: JSON.stringify(this.PersonID),
+      headers: {
+        "Content-Type": "application/json; charset=utf-8"
+      }
+    })
+
+  console.log("Creating (POSTing)...!");
+  console.log(this.PersonID);
+},
   newPersonData() {
     return {
       personalID:'',

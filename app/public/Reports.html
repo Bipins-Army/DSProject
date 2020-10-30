@@ -91,6 +91,15 @@
 								</table>
 							</div>
 
+							<div id="stationreport" class='row'>
+							<form id='Braden' v-on.prevent="createStation">
+								<label for="certID">Radio Number</label>
+								<input type="text" v-model="station.radioNumber" class="form-control" id="certID" placeholder="ID to delete">
+								<label for="certID1">Station Number</label>
+								<input type="text" v-model="station.stationNumber" class="form-control" id="certID1" placeholder="ID to delete">
+								 <input type="submit" class="button" value = "Delete Certification">
+							 </form>
+							</div>
 
 
 

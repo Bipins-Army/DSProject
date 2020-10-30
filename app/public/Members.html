@@ -141,8 +141,20 @@
 </form>
 
 
-</div>
 
+<form v-on:submit.prevent="deleteMember">
+	<div class="members">
+		<label for="memberid">Personal ID</label>
+		<input type="text" v-model="PersonID.PersonalID" class="form-control" id="memberID">
+
+	</div>
+
+	<div></br>
+		<input type="submit" value="Delete Member" class="button">
+	</div>
+</form>
+
+</div>
 
 				<!-- Footer -->
 				<footer id="footer">
