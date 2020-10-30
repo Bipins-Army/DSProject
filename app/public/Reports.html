@@ -70,6 +70,26 @@
 					</div>
 					<button type="button" name="button">Fetch Report</button>
 				</form>
+//show report result
+				<div id = 'report'>
+					<h2> View Member List with Expired Certification </h2>
+								<table>
+									<thead>
+										<tr>
+											<th>Member First Name</th>
+											<th>Member Last Name</th>
+											<th>Certification Name</th>
+										</tr>
+									</thead>
+								<tbody>
+										<tr v-for = "mc in mem_cert">
+											<td>{{mc.firstName}}</td>
+											<td>{{mc.lastName}}</td>
+											<td>{{mc.certificationName}}</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 
 
 
@@ -90,6 +110,9 @@
 				</footer>
 
 		<!-- Scripts -->
+		<script type="JavaScript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="js/report.app.js"></script>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.scrolly.min.js"></script>
 		<script src="js/jquery.scrollex.min.js"></script>
