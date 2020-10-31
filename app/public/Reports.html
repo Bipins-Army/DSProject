@@ -92,15 +92,32 @@
 							</div>
 
 							<div id="stationreport" class='row'>
-							<form id='Braden' v-on.prevent="createStation">
+							<form id='Braden' method = "POST" v-on:submit.prevent="createStation">
 								<label for="certID">Radio Number</label>
-								<input type="text" v-model="station.radioNumber" class="form-control" id="certID" placeholder="ID to delete">
+								<input type="text" v-model="station.radioNumber" class="form-control" id="certID" placeholder="radio number">
 								<label for="certID1">Station Number</label>
-								<input type="text" v-model="station.stationNumber" class="form-control" id="certID1" placeholder="ID to delete">
-								 <input type="submit" class="button" value = "Delete Certification">
+								<input type="text" v-model="station.stationNumber" class="form-control" id="certID1" placeholder="station number">
+								 <input type="submit" class="button" id = "createStation" value = "Submit">
 							 </form>
-							</div>
 
+								<h2> View Member List with Expired Certification </h2>
+											<table>
+												<thead>
+													<tr>
+														<th>Member First Name</th>
+														<th>Member Last Name</th>
+														<th>Email</th>
+													</tr>
+												</thead>
+											<tbody>
+													<tr v-for = "st in filter_station">
+														<td>{{st.firstName}}</td>
+														<td>{{st.lastName}}</td>
+														<td>{{st.email}}</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
 
 
 
@@ -122,6 +139,7 @@
 		<script type="JavaScript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 		<script src="js/report.app.js"></script>
+		<script src="js/station.app.js"></script>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.scrolly.min.js"></script>
 		<script src="js/jquery.scrollex.min.js"></script>

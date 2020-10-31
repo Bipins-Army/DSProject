@@ -5,10 +5,9 @@ var app = new Vue({
       radioNumber: '',
       stationNumber: ''
     }],
+    filter_station:[]
   },
-  created() {
-    this.fetchUser();
-  },
+
 
   methods: {
     createStation( ){
@@ -23,7 +22,7 @@ var app = new Vue({
     .then( response => response.json() )
     .then( json => {
       console.log("Returned from post:", json);
-      this.station = this.stationData();
+      this.filter_station = json;
     });
     console.log("Creating (POSTING)...!");
     console.log(this.station);
