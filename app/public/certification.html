@@ -99,6 +99,32 @@ delete member certifications.</p>
 			 </form>
 		 </div>
 </div>
+<div id="editcert">
+<form>
+		<h2> Certification Edit </h2>
+
+<div class = "row">
+	<label for="certID">Certification Id</label>
+	<input type="text" class="form-control" id="editcert_id" v-model="editcert.CertificationID" >
+	</div>
+
+	<label for="certifyingAgency">Certifying Agency</label>
+	<input type="text" v-model="editcert.certifyingAgency" class="form-control" id="certifyingAgency" placeholder="Certifying Agency">
+	<label for="certificationName">Certification Name</label>
+	<input type="text" v-model="editcert.certificationName" class="form-control" id="certificationName" placeholder="Certification Name">
+	<label for="standardExpiry">Standard Expiry</label>
+	<input type="text" v-model="editcert.standardExpiry" class="form-control" id="standardExpiry" placeholder="Standard Expiry">
+
+
+
+		<div></br>
+			<!-- <input type="submit" value="Edit Member" class="button"> -->
+			<button v-on:click.prevent ="editCert" type="submit" >Edit Certification</button>
+		</div>
+
+	</form>
+
+</div>
 				<!-- <h2>Search for User's Cerfitification Informaion</h2>
 				<form class="form-group" action="index.html" method="get">
 					<div class="form-group">

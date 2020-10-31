@@ -16,6 +16,7 @@ editcertapp = new Vue ({
 
     editCertData() {
       this.editcert={
+        CertificationID: '',
         certifyingAgency:'',
         certificationName:'',
         standardExpiry:''
