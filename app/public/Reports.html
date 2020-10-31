@@ -93,34 +93,29 @@
 								</table>
 						</div>
 
-							<div id="stationreport" class='row'>
-							<form id='Braden' method = "POST" v-on:submit.prevent="createStation">
-								<label for="certID">Radio Number</label>
-								<input type="text" v-model="station.radioNumber" class="form-control" id="certID" placeholder="radio number">
-								<label for="certID1">Station Number</label>
-								<input type="text" v-model="station.stationNumber" class="form-control" id="certID1" placeholder="station number">
-								 <input type="submit" class="button" id = "createStation" value = "Submit">
-							 </form>
-
-								<h2> View Member List with Expired Certification </h2>
-											<table>
-												<thead>
-													<tr>
-														<th>Member First Name</th>
-														<th>Member Last Name</th>
-														<th>Email</th>
-													</tr>
-												</thead>
-											<tbody>
-													<tr v-for = "st in filter_station">
-														<td>{{st.firstName}}</td>
-														<td>{{st.lastName}}</td>
-														<td>{{st.email}}</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-
+						<div id = 'stationreport'>
+							<h2> View Member List By Station and Radio Number </h2>
+										<table>
+											<thead>
+												<tr>
+													<th>Member First Name</th>
+													<th>Member Last Name</th>
+													<th>Station Number</th>
+													<th>Radio Number</th>
+													<th>Email</th>
+												</tr>
+											</thead>
+										<tbody>
+												<tr v-for = "st in station">
+													<td>{{st.firstName}}</td>
+													<td>{{st.lastName}}</td>
+													<td>{{st.stationNumber}}</td>
+													<td>{{st.radioNumber}}</td>
+													<td>{{st.email}}</td>
+												</tr>
+											</tbody>
+										</table>
+								</div>
 
 
 				<!-- Footer -->
