@@ -91,13 +91,18 @@ delete member certifications.</p>
 				</table>
 			</div>
 			</form>
-			<div class='row'>
-			<form id='DeleteCertForm' v-on.prevent="deleteCert()">
-				<label for="certID">Certification ID</label>
-				<input type="text" v-model="certification.CertificationID" class="form-control" id="certID" placeholder="ID to delete">
-				 <input type="submit" class="button" value = "Delete Certification">
-			</div>
-		 </form>
+
+			<form v-on:submit.prevent="deleteCert">
+				<div class="row">
+					<label for="certID">Certification ID</label>
+					<input type="text" v-model="certID.CertificationID" class="form-control" id="certID">
+
+				</div>
+
+				<div></br>
+					<input type="submit" value="Delete Member" class="button">
+				</div>
+			</form>
 
 </div>
 <div id="editcert">
