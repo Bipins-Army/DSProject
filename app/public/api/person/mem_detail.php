@@ -2,24 +2,32 @@
 
 require 'common.php';
 
+// Step 1: Get a datase connection from our helper class
 $db = DbConnection::getConnection();
 
-$sql = 'SELECT * FROM Person';
+// Step 2: Create & run the query
+$sql = "SELECT CONCAT(Person.firstName,' ', Person.lastName) as 'memberName', Certification.certificationName, Certification.certifyingAgency, Certification.standardExpiry
+FROM Person, Person_Certification, Certification
+WHERE Person.PersonalID = Person_Certification.PersonalID AND Person_Certification.CertificationID = Certification.CertificationID";
+
 $vars = [];
 
 if (isset($_GET['PersonalID'])) {
-  // This is an example of a parameterized query
-  $sql = 'SELECT p.firstName, p.lastName, c.CertificationID, c.certifyingAgency Person_Certification as pc, Certification as c, Person as p
-  WHERE c.CertificationID = pc.CertificationID and p.PersonalID = pc.PersonalID and c.CertificationID=?';
+  $sql = 'SELECT Person.PersonalID, Certification.certificationName, Certification.certifyingAgency, Certification.standardExpiry
+  FROM Person, Person_Certification, Certification
+  WHERE Person.PersonalID = Person_Certification.PersonalID AND Person_Certification.CertificationID = Certification.CertificationID
+  AND Person.PersonalID = ?';
   $vars = [ $_GET['PersonalID'] ];
-}
+  }
 
 $stmt = $db->prepare($sql);
 $stmt->execute($vars);
 
-$persons = $stmt->fetchAll();
+$members = $stmt->fetchAll();
 
-$json = json_encode($persons, JSON_PRETTY_PRINT);
+// Step 3: Convert to JSON
+$memb = json_encode($members, JSON_PRETTY_PRINT);
 
+// Step 4: Output
 header('Content-Type: application/json');
-echo $json;
+echo $memb;

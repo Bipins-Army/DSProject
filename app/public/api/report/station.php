@@ -8,7 +8,7 @@ $db = DbConnection::getConnection();
 
 $stmt = $db->prepare(
   'SELECT p.firstName, p.lastName, p.email, p.stationNumber, p.radioNumber FROM Person as p
-  WHERE p.stationNumber = ? and p.radioNumber =? '
+  WHERE p.stationNumber = ? or p.radioNumber =? '
 );
 
 $stmt->execute([

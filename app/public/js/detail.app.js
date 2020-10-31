@@ -1,37 +1,40 @@
-var app = new Vue({
+detailS = new Vue({
   el: '#details',
   data: {
-    detial: [{
-
-    }],
-    newDetail:[]
+    MemDetail: [{
+      PersonalID: '',
+      firstName: '',
+      lastName: '',
+      certificationName: '',
+      certifyingAgency: '',
+      standardExpiry: ''
+    }]
   },
-
-
   methods: {
-    createDetial( ){
-      //make a line for getting the // ID
-      fetch('api/person/mem_detail.php',{
-      method:'POST',
-      body: JSON.stringify(this.detail),
-      headers: {
-        "Content-Type": "application/json; charset=utf-8"
-      }}
-    )
-    .then( response => response.json() )
-    .then( json => {
-      console.log("Returned from post:", json);
-      this.newDetail = json;
-    });
-    console.log("Creating (POSTING)...!");
-    console.log(this.detail);
-  },
-  detailData() {
-    return {
-
+    fetchDetail() {
+      fetch('api/person/mem_detail.php')
+        .then(response => response.json())
+        .then(json => {
+          this.MemDetail = json;
+          console.log(this.MemDetail);
+        });
     }
-  }
-  }
-
   },
-  )
+  computed: {
+    groupedDetails() {
+      var person = {};
+      this.MemDetail.forEach((item) => {
+        if (person[item.memberName] == undefined) {
+          person[item.memberName] = [];
+          person[item.memberName].push(item.certificationName)
+        } else {
+          person[item.memberName].push(item.certificationName);
+        }
+      });
+      return person;
+    }
+  },
+  created() {
+    this.fetchDetail();
+  }
+});
