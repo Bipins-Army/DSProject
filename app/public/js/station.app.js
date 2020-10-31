@@ -1,4 +1,4 @@
-var app = new Vue({
+personReport = new Vue({
   el: '#stationreport',
   data: {
     station: [{
