@@ -92,13 +92,45 @@ delete member certifications.</p>
 				</table>
 			</div>
 			</form>
-			<div id="DeleteCert" class='row'>
-			<form id='DeleteCertForm' v-on.prevent="deleteCert()">
-				<label for="certID">Certification ID</label>
-				<input type="text" v-model="certification.CertificationID" class="form-control" id="certID" placeholder="ID to delete">
-				 <input type="submit" class="button" value = "Delete Certification">
-			 </form>
-		 </div>
+
+			<form v-on:submit.prevent="deleteCert">
+				<div class="row">
+					<label for="certID">Certification ID</label>
+					<input type="text" v-model="certID.CertificationID" class="form-control" id="certID">
+
+				</div>
+
+				<div></br>
+					<input type="submit" value="Delete Member" class="button">
+				</div>
+			</form>
+
+</div>
+<div id="editcert">
+<form>
+		<h2> Certification Edit </h2>
+
+<div class = "row">
+	<label for="certID">Certification Id</label>
+	<input type="text" class="form-control" id="editcert_id" v-model="editcert.CertificationID" >
+	</div>
+
+	<label for="certifyingAgency">Certifying Agency</label>
+	<input type="text" v-model="editcert.certifyingAgency" class="form-control" id="certifyingAgency" placeholder="Certifying Agency">
+	<label for="certificationName">Certification Name</label>
+	<input type="text" v-model="editcert.certificationName" class="form-control" id="certificationName" placeholder="Certification Name">
+	<label for="standardExpiry">Standard Expiry</label>
+	<input type="text" v-model="editcert.standardExpiry" class="form-control" id="standardExpiry" placeholder="Standard Expiry">
+
+
+
+		<div></br>
+			<!-- <input type="submit" value="Edit Member" class="button"> -->
+			<button v-on:click.prevent ="editCert" type="submit" >Edit Certification</button>
+		</div>
+
+	</form>
+
 </div>
 				<!-- <h2>Search for User's Cerfitification Informaion</h2>
 				<form class="form-group" action="index.html" method="get">
@@ -133,7 +165,7 @@ delete member certifications.</p>
 		<script type="JavaScript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 		<script src="js/certification.app.js"></script>
-		<script src="js/delete_cert.app.js"></script>
+		<script src="js/editcert.app.js"></script>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.scrolly.min.js"></script>
 		<script src="js/jquery.scrollex.min.js"></script>
