@@ -12,7 +12,8 @@ var app = new Vue({
       certifyingAgency: '',
       certificationName: '',
       standardExpiry: ''
-    }
+    },
+        CertificationID:{},
   },
   created() {
     this.fetchUser();
@@ -45,6 +46,19 @@ var app = new Vue({
     console.log("Creating (POSTING)...!");
     console.log(this.newCertification);
   },
+  deleteCert(){
+  console.log(this.CertificationID)
+  fetch('api/Certification/delete_cert.php', {
+      method: 'POST',
+      body: JSON.stringify(this.CertificationID),
+      headers: {
+        "Content-Type": "application/json; charset=utf-8"
+      }
+    })
+
+      console.log("Creating (POSTing)...!");
+      console.log(this.CertificationID);
+    },
   newCertificationData() {
     return {
       CertificationID:"",
