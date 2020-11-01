@@ -95,7 +95,7 @@
 				  	<label for="isActive" class="col-sm-2 control-label">Is Member Active?</label>
 						<input type="text" v-model="createPersonList.isActive" class="form-control" id="isActive" placeholder="true or false">
 				  <input type="submit" class="button" value="Create Person">
-
+				</form>
 </div>
 <div>
 <h2>View Existing Members</h2>
@@ -140,14 +140,14 @@
 	</tbody>
 </table>
 </div>
-</form>
+
 
 
 
 <form v-on:submit.prevent="deleteMember">
 	<div class="members">
-		<label for="memberid">Personal ID</label>
-		<input type="text" v-model="PersonID.PersonalID" class="form-control" id="memberID">
+		<label for="memberid">Delete an Existing Member</label>
+		<input type="text" v-model="PersonID.PersonalID" class="form-control" id="memberID" placeholder="Personal ID">
 
 	</div>
 
@@ -158,9 +158,10 @@
 
 </div>
 
+
 <div id="editperson">
 <form>
-		<h2> Member Edit </h2>
+		<h2> Edit an Existing Member </h2>
 
 <div>
 	<label for="person_id">Member Id</label>

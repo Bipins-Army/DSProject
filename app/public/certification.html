@@ -23,7 +23,7 @@
 							<a href="#menu">Menu</a>
 						</nav>
 					</header>
-				</div>
+
 				<!-- Menu -->
 				<nav id="menu">
           <ul class="links">
@@ -57,7 +57,7 @@ delete member certifications.</p>
 					</section>
 
 				<!-- Main -->
-<div class="row" id ='certificationPage'>
+<div class="container" id ='certificationPage'>
 	<form id="NewCertForm" v-on:submit.prevent="createCertification()">
 	<div class='certification'>
 				<h2>Enter a New Certification</h2>
@@ -67,9 +67,10 @@ delete member certifications.</p>
 				    <input type="text" v-model="newCertification.certificationName" class="form-control" id="certificationName" placeholder="Certification Name, e.g CPR">
 				    <label for="standardExpiry">Standard Expiry</label>
 				    <input type="text" v-model="newCertification.standardExpiry" class="form-control" id="standardExpiry" placeholder="Expiry Year">
-				  <input type="submit" class="button" value = "Create Certification">
+				  </br><input type="submit" class="button" value = "Create Certification">
 
 			</div>
+			</form>
 <div>
 	<h2> View Certification </h2>
 				<table>
@@ -91,17 +92,17 @@ delete member certifications.</p>
 					</tbody>
 				</table>
 			</div>
-			</form>
+
 
 			<form v-on:submit.prevent="deleteCert">
-				<div class="row">
-					<label for="certID">Certification ID</label>
-					<input type="text" v-model="certID.CertificationID" class="form-control" id="certID">
+				<div>
+					<label for="certID">Delete an Existing Certification</label>
+					<input type="text" v-model="certID.CertificationID" class="form-control" id="certID" placeholder="Certification ID">
 
-				</div>
 
-				<div></br>
-					<input type="submit" value="Delete Member" class="button">
+
+				</br>
+					<input type="submit" value="Delete Certification" class="button">
 				</div>
 			</form>
 
@@ -110,7 +111,7 @@ delete member certifications.</p>
 <form>
 		<h2> Certification Edit </h2>
 
-<div class = "row">
+<div>
 	<label for="certID">Certification Id</label>
 	<input type="text" class="form-control" id="editcert_id" v-model="editcert.CertificationID" >
 	</div>
