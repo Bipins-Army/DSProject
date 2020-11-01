@@ -51,8 +51,7 @@
 								<h1>Certification</h1>
 							</header>
 							<div class="content">
-								<p>On this page you can view a list of certified people and  add, edit, or
-delete member certifications.</p>
+
 							</div>
 						</div>
 					</section>
@@ -85,7 +84,7 @@ delete member certifications.</p>
 									</tr>
 								</thead>
 							<tbody>
-									<tr v-for = "P in PersonCertification">
+									<tr v-for = "P in personCertification">
 										<td>{{P.CertificationID}}</td>
 										<td>{{P.PersonalID}}</td>
 										<td>{{ P.certificationStatus}}</td>
