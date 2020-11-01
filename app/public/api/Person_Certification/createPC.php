@@ -22,6 +22,7 @@ $stmt->execute([
   $_POST['expirationDate']
 ]);
 
+$id = $_POST['CertificationID']
 // If needed, get auto-generated PK from DB
 // $pk = $db->lastInsertId();  // https://www.php.net/manual/en/pdo.lastinsertid.php
 
@@ -30,4 +31,4 @@ $stmt->execute([
 // just in case the data changed by entering it
 header('HTTP/1.1 303 See Other');
 header('Content-Type: application/json');
-header('Location: ../Person_Certification/?CertificationID=' . $pk);
+header('Location: ../Person_Certification/?CertificationID=' .$id);

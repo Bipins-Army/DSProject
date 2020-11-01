@@ -30,7 +30,7 @@ var app = new Vue({
       //make a line for getting the // ID
       fetch('api/Person_Certification/createPC.php',{
       method:'POST',
-      body: JSON.stringify(this.newPerson_Certification),
+      body: JSON.stringify(this.newPersonCertification),
       headers: {
         "Content-Type": "application/json; charset=utf-8"
       }}
@@ -38,11 +38,11 @@ var app = new Vue({
     .then( response => response.json())
     .then( json => {
       console.log("Returned from post:", json);
-      this.person_certification.push(json[0]);
-      this.newPerson_Certification = this.newPerson_CertificationData();
+      this.personCertification.push(json[0]);
+      this.newPersonCertification = this.newPerson_CertificationData();
     });
     console.log("Creating (POSTING)...!");
-    console.log(this.newPerson_Certification);
+    console.log(this.newPersonCertification);
   },
   newPerson_CertificationData() {
     return {
