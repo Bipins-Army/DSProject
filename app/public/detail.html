@@ -32,14 +32,14 @@
 						<li><a href="index.html">Home</a></li>
             <li><a href="certification.html">Cerfitification</a></li>
             <li><a href="Members.html">Members</a></li>
-						<li><a href="detail.html">Member Details</a></li>
+						<li><a href="detail.html">Member&Certification Details</a></li>
 						<li><a href="Reports.html">Reports</a></li>
 						<li><a href="Person_Certification.html">Person Certification</a></li>
 						<li><a href="phone.html">Person Phone</a></li>
           </ul>
         </nav>
 
-<h3>Certification for Members</h3>
+<h2>Certification for Members</h2>
 				<div id="details" class="container">
 			    <div v-for="(person,index) in groupedDetails">
 			      <h3>{{index}}</h3>
@@ -51,7 +51,17 @@
 			    </div>
 			  </div>
 
-
+				<h2>Certification for Members</h2>
+								<div id="details2" class="container">
+							    <div v-for="(person,index) in groupedDetails">
+							      <h3>{{index}}</h3>
+							      <ul>
+							        <li v-for="per in person">
+							          {{per}}
+							        </li>
+							      </ul>
+							    </div>
+							  </div>
 
 
 				<!-- Footer -->
@@ -71,6 +81,7 @@
 		<!-- Scripts -->
 		<script type="JavaScript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="js/cert_detail.app.js"></script>
 		<script src="js/detail.app.js"></script>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.scrolly.min.js"></script>
