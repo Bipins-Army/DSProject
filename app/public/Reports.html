@@ -56,8 +56,7 @@
 						</div>
 					</section>
 
-				<!-- Main -->
-//show report result
+
 				<div id = 'report'>
 					<h2> View Member List with Expired Certification </h2>
 								<table>
@@ -78,29 +77,28 @@
 								</table>
 						</div>
 
-						<div id = 'stationreport'>
-							<h2> View Member List By Station and Radio Number </h2>
-										<table>
-											<thead>
-												<tr>
-													<th>Member First Name</th>
-													<th>Member Last Name</th>
-													<th>Station Number</th>
-													<th>Radio Number</th>
-													<th>Email</th>
-												</tr>
-											</thead>
-										<tbody>
-												<tr v-for = "st in station">
-													<td>{{st.firstName}}</td>
-													<td>{{st.lastName}}</td>
-													<td>{{st.stationNumber}}</td>
-													<td>{{st.radioNumber}}</td>
-													<td>{{st.email}}</td>
-												</tr>
-											</tbody>
-										</table>
-								</div>
+						<h2>List of Members by Station, Radio, and Email Address</h2>
+				    <div id="mem_rep" class="table-responsive">
+				      <table class="table table-bordered table-striped">
+				        <thead>
+				          <tr>
+				            <th scope="col">First Name</th>
+				            <th scope="col">Last Name</th>
+				            <th scope="col">Station</th>
+				            <th scope="col">Radio</th>
+				            <th scope="col">Email</th>
+				          </tr>
+				        </thead>
+				          <tr v-for="mem in MemList">
+				            <td>{{mem.firstName}}</td>
+				            <td>{{mem.lastName}}</td>
+				            <td>{{mem.stationNumber}}</td>
+				            <td>{{mem.radioNumber}}</td>
+				            <td>{{mem.email}}
+				          </tr>
+				        </tbody>
+				      </table>
+				    </div>
 
 
 				<!-- Footer -->

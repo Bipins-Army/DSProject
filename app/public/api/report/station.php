@@ -6,8 +6,7 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 
-$sql ="SELECT firstName, lastName, stationNumber, radioNumber, email FROM Person
-ORDER BY stationNumber ASC, radioNumber ASC";
+$sql ="SELECT firstName, lastName, stationNumber, radioNumber, email FROM Person ORDER BY stationNumber ASC, radioNumber ASC";
 
 $vars = [];
 

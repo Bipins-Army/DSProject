@@ -1,28 +1,25 @@
-personReport = new Vue({
-  el: '#stationreport',
+memRepApp = new Vue ({
+  el: '#mem_rep',
   data: {
-    station: [{
-      firstName:'',
+    MemList: [{
+      firstName: '',
       lastName: '',
       stationNumber: '',
       radioNumber: '',
       email: ''
-    }],
+    }]
   },
-
-
   methods: {
-    fetchUser() {
+    fetchMember(){
       fetch('api/report/station.php')
-      .then(response => response.json())
-      .then(json => {
-        this.station=json;
-        console.log(this.station);
-      });
+        .then(response => response.json())
+        .then(json => {
+          this.MemList = json;
+          console.log(this.MemList);
+        });
     },
-    created() {
-      this.fetchUser();
-    },
+  },
+  created() {
+    this.fetchMember();
 }
-},
-)
+});
