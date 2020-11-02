@@ -2,3 +2,8 @@ MYSQL_DATABASE=dsproject
 MYSQL_HOST=dsproject.cdhbo9qtmt5h.us-east-1.rds.amazonaws.com
 MYSQL_USER=team14
 MYSQL_PASSWORD=12345678
+
+SetEnv MYSQL_DATABASE=dsproject
+SetEnv MYSQL_HOST=dsproject.cdhbo9qtmt5h.us-east-1.rds.amazonaws.com
+SetEnv MYSQL_USER=team14
+SetEnv MYSQL_PASSWORD=12345678
