@@ -77,16 +77,17 @@
 								</table>
 						</div>
 
-						<h2>List of Members by Station, Radio, and Email Address</h2>
-				    <div id="mem_rep" class="table-responsive">
-				      <table class="table table-bordered table-striped">
+
+				    <div id="mem_rep">
+								<h2>List of Members by Station, Radio, and Email Address</h2>
+				      <table class="table" id="srttable">
 				        <thead>
 				          <tr>
-				            <th scope="col">First Name</th>
-				            <th scope="col">Last Name</th>
-				            <th scope="col">Station</th>
-				            <th scope="col">Radio</th>
-				            <th scope="col">Email</th>
+				            <th>First Name</th>
+				            <th>Last Name</th>
+				            <th>Station</th>
+				            <th>Radio</th>
+				            <th>Email</th>
 				          </tr>
 				        </thead>
 				          <tr v-for="mem in MemList">
@@ -100,15 +101,16 @@
 				      </table>
 				    </div>
 
-						<h2>List of Person ID by Expiration Date, Certification Name and Certifying Agency</h2>
-				    <div id="report2" class="table-responsive">
-				      <table class="table table-bordered table-striped">
+
+				    <div id="report2" >
+								<h2>List of Person ID by Expiration Date, Certification Name and Certifying Agency</h2>
+				      <table class="table" id="srttable">
 				        <thead>
 				          <tr>
-				            <th scope="col">Person ID</th>
-				            <th scope="col">Expiration Date</th>
-				            <th scope="col">Certification Name</th>
-				            <th scope="col">Certifying Agency</th>
+				            <th>Person ID</th>
+				            <th>Expiration Date</th>
+				            <th>Certification Name</th>
+				            <th>Certifying Agency</th>
 				          </tr>
 				        </thead>
 				          <tr v-for="mc in mcert">
@@ -120,6 +122,8 @@
 				        </tbody>
 				      </table>
 				    </div>
+					</div>
+					</body>
 
 				<!-- Footer -->
 				<footer id="footer">
