@@ -32,7 +32,7 @@
 						<li><a href="index.html">Home</a></li>
             <li><a href="certification.html">Cerfitification</a></li>
             <li><a href="Members.html">Members</a></li>
-						<li><a href="detail.html">Member&Certification Details</a></li>
+						<li><a href="detail.html">Details</a></li>
 						<li><a href="Reports.html">Reports</a></li>
 						<li><a href="Person_Certification.html">Person Certification</a></li>
 						<li><a href="phone.html">Person Phone</a></li>
@@ -60,12 +60,10 @@
 
 
 
-						<div class="row" id='PersonPage'>
-
-
-				<form id="personForm" v-on:submit.prevent="createPerson()">
+				<div class="row" id='PersonPage'>
+			  	<form id="personForm" v-on:submit.prevent="createPerson()">
 				  <div class="persons">
-							<h2>Enter a New Member</h2>
+						<h2>Enter a New Member</h2>
 				    <label for="firstName">First Name</label>
 				    <input type="text" v-model="createPersonList.firstName" class="form-control" id="firstName" placeholder="First Name">
 				    <label for="lastName">Last Name</label>
@@ -97,9 +95,10 @@
 				  <input type="submit" class="button" value="Create Person">
 				</form>
 </div>
+
 <div>
 <h2>View Existing Members</h2>
-<table>
+<table id="srttable">
 	<thead>
 		<tr>
 			<th>Personal ID</th>
@@ -141,32 +140,25 @@
 </table>
 </div>
 
-
-
-
 <form v-on:submit.prevent="deleteMember">
 	<div class="members">
 		<label for="memberid">Delete an Existing Member</label>
 		<input type="text" v-model="PersonID.PersonalID" class="form-control" id="memberID" placeholder="Personal ID">
-
 	</div>
-
 	<div></br>
 		<input type="submit" value="Delete Member" class="button">
 	</div>
 </form>
-
 </div>
 
-
 <div id="editperson">
-<form>
+	<form>
 		<h2> Edit an Existing Member </h2>
 
-<div>
-	<label for="person_id">Member Id</label>
-	<input type="text" class="form-control" id="editmember_id" v-model="editperson.PersonalID" >
-	</div>
+		<div>
+			<label for="person_id">Member Id</label>
+			<input type="text" class="form-control" id="editmember_id" v-model="editperson.PersonalID" >
+	  </div>
 
 	<label for="firstName">First Name</label>
 	<input type="text" v-model="editperson.firstName" class="form-control" id="firstName" placeholder="First Name">
@@ -196,16 +188,11 @@
 	<input type="text" v-model="editperson.stationNumber" class="form-control" id="stationNumber" placeholder="Station Number">
 	<label for="isActive" class="col-sm-2 control-label">Is Member Active?</label>
 	<input type="text" v-model="editperson.isActive" class="form-control" id="isActive" placeholder="true or false">
-			<input type="text" class="form-control" id="radio" v-model="editperson.radio">
-
-
+	<input type="text" class="form-control" id="radio" v-model="editperson.radio">
 		<div></br>
-			<!-- <input type="submit" value="Edit Member" class="button"> -->
 			<button v-on:click.prevent ="editPerson" type="submit" >Edit Member</button>
 		</div>
-
 	</form>
-
 </div>
 
 				<!-- Footer -->
@@ -234,6 +221,14 @@
 		<script src="js/breakpoints.min.js"></script>
 		<script src="js/util.js"></script>
 		<script src="js/main.js"></script>
+		<script src="js/tablesort.js"></script>
+		<script src='js/tablesort.min.js'></script>
+		<script src='js/tablesort.number.js'></script>
+		<script src='js/tablesort.date.js'></script>
+		<script>
+			new Tablesort(document.getElementById('srttable'));
+
+		</script>
 
 
 	</body>

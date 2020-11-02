@@ -32,14 +32,27 @@
 						<li><a href="index.html">Home</a></li>
             <li><a href="certification.html">Cerfitification</a></li>
             <li><a href="Members.html">Members</a></li>
-						<li><a href="detail.html">Member&Certification Details</a></li>
+						<li><a href="detail.html">Details</a></li>
 						<li><a href="Reports.html">Reports</a></li>
 						<li><a href="Person_Certification.html">Person Certification</a></li>
 						<li><a href="phone.html">Person Phone</a></li>
           </ul>
         </nav>
 
-				<h2>Certification for Members</h2>
+				<section id="banner" class="style2">
+					<div class="inner">
+						<span class="image">
+							<img src="css/images/pic07.jpg" alt="" />
+						</span>
+						<header class="major">
+							<h1>Details</h1>
+						</header>
+						<div class="content">
+						</div>
+					</div>
+				</section>
+
+
 								<div id="details2" class="container">
 									<div v-for="(person,index) in groupedDetails">
 										<h2> List of Members with {{index}} Certification </h2>
@@ -61,7 +74,7 @@
 									</div>
 								</div>
 
-<h2>Member with Certification</h2>
+<h2>Certification's held by each Member</h2>
 				<div id="details" class="container">
 			    <div v-for="(person,index) in groupedDetails">
 			      <p>{{index}}</>
