@@ -37,7 +37,7 @@ var app = new Vue({
     .then( response => response.json() )
     .then( json => {
       console.log("Returned from post:", json);
-      this.number.push(json[0]);
+      this.number=json;
       this.newNumber = this.newNumberData();
     });
     console.log("Creating (POSTING)...!");

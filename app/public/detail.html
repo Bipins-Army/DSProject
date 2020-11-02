@@ -32,17 +32,52 @@
 						<li><a href="index.html">Home</a></li>
             <li><a href="certification.html">Cerfitification</a></li>
             <li><a href="Members.html">Members</a></li>
-						<li><a href="detail.html">Member Details</a></li>
+						<li><a href="detail.html">Details</a></li>
 						<li><a href="Reports.html">Reports</a></li>
 						<li><a href="Person_Certification.html">Person Certification</a></li>
 						<li><a href="phone.html">Person Phone</a></li>
           </ul>
         </nav>
 
-<h3>Certification for that Members</h3>
+				<section id="banner" class="style2">
+					<div class="inner">
+						<span class="image">
+							<img src="css/images/pic07.jpg" alt="" />
+						</span>
+						<header class="major">
+							<h1>Details</h1>
+						</header>
+						<div class="content">
+						</div>
+					</div>
+				</section>
+
+
+								<div id="details2" class="container">
+									<div v-for="(person,index) in groupedDetails">
+										<h2> List of Members with {{index}} Certification </h2>
+													<table class="table" id="srttable">
+														<thead>
+															<tr>
+																<th>{{index}}</th>
+
+															</tr>
+														</thead>
+													<tbody>
+															<tr v-for = "per in person">
+																<td>{{per}}</td>
+
+															</tr>
+														</tbody>
+													</table>
+
+									</div>
+								</div>
+
+<h2>Certification's held by each Member</h2>
 				<div id="details" class="container">
 			    <div v-for="(person,index) in groupedDetails">
-			      <h3>{{index}}</h3>
+			      <p>{{index}}</>
 			      <ul>
 			        <li v-for="per in person">
 			          {{per}}
@@ -71,6 +106,7 @@
 		<!-- Scripts -->
 		<script type="JavaScript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="js/cert_detail.app.js"></script>
 		<script src="js/detail.app.js"></script>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.scrolly.min.js"></script>
@@ -79,6 +115,7 @@
 		<script src="js/breakpoints.min.js"></script>
 		<script src="js/util.js"></script>
 		<script src="js/main.js"></script>
+		<script src="js/tablesort.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
 

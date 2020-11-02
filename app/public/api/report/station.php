@@ -6,21 +6,18 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 
-$stmt = $db->prepare(
-  'SELECT p.firstName, p.lastName, p.email, p.stationNumber, p.radioNumber FROM Person as p
-  WHERE p.stationNumber = ? or p.radioNumber =? '
-);
+$sql ="SELECT firstName, lastName, stationNumber, radioNumber, email FROM Person ORDER BY stationNumber ASC, radioNumber ASC";
 
-$stmt->execute([
-  $_POST['stationNumber'],
-  $_POST['radioNumber']
-]);
+$vars = [];
 
-// If needed, get auto-generated PK from DB // https://www.php.net/manual/en/pdo.lastinsertid.php
+$stmt = $db->prepare($sql);
+$stmt->execute($vars);
+
+$exp_cert = $stmt->fetchAll();
+
+// Step 3: Convert to JSON
+$json = json_encode($exp_cert, JSON_PRETTY_PRINT);
 
 // Step 4: Output
-// Here, instead of giving output, I'm redirecting to the SELECT API,
-// just in case the data changed by entering it
-header('HTTP/1.1 303 See Other');
-
-header('Location: ../report/);
+header('Content-Type: application/json');
+echo $json;

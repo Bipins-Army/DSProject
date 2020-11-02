@@ -23,14 +23,14 @@
 							<a href="#menu">Menu</a>
 						</nav>
 					</header>
-				</div>
+
 				<!-- Menu -->
 				<nav id="menu">
           <ul class="links">
 						<li><a href="index.html">Home</a></li>
             <li><a href="certification.html">Cerfitification</a></li>
             <li><a href="Members.html">Members</a></li>
-						<li><a href="detail.html">Member Details</a></li>
+						<li><a href="detail.html">Details</a></li>
 						<li><a href="Reports.html">Reports</a></li>
 						<li><a href="Person_Certification.html">Person Certification</a></li>
 						<li><a href="phone.html">Person Phone</a></li>
@@ -57,7 +57,7 @@ delete member certifications.</p>
 					</section>
 
 				<!-- Main -->
-<div class="row" id ='certificationPage'>
+<div class="container" id ='certificationPage'>
 	<form id="NewCertForm" v-on:submit.prevent="createCertification()">
 	<div class='certification'>
 				<h2>Enter a New Certification</h2>
@@ -67,12 +67,12 @@ delete member certifications.</p>
 				    <input type="text" v-model="newCertification.certificationName" class="form-control" id="certificationName" placeholder="Certification Name, e.g CPR">
 				    <label for="standardExpiry">Standard Expiry</label>
 				    <input type="text" v-model="newCertification.standardExpiry" class="form-control" id="standardExpiry" placeholder="Expiry Year">
-				  <input type="submit" class="button" value = "Create Certification">
-
+				  </br><input type="submit" class="button" value = "Create Certification">
 			</div>
+			</form>
 <div>
 	<h2> View Certification </h2>
-				<table>
+				<table id='srttable'>
 					<thead>
 						<tr>
 							<th>Certification ID</th>
@@ -91,17 +91,13 @@ delete member certifications.</p>
 					</tbody>
 				</table>
 			</div>
-			</form>
 
 			<form v-on:submit.prevent="deleteCert">
-				<div class="row">
-					<label for="certID">Certification ID</label>
-					<input type="text" v-model="certID.CertificationID" class="form-control" id="certID">
-
-				</div>
-
-				<div></br>
-					<input type="submit" value="Delete Member" class="button">
+				<div>
+					<label for="certID">Delete an Existing Certification</label>
+					<input type="text" v-model="certID.CertificationID" class="form-control" id="certID" placeholder="Certification ID">
+				</br>
+					<input type="submit" value="Delete Certification" class="button">
 				</div>
 			</form>
 
@@ -109,28 +105,20 @@ delete member certifications.</p>
 <div id="editcert">
 <form>
 		<h2> Certification Edit </h2>
-
-<div class = "row">
+<div>
 	<label for="certID">Certification Id</label>
 	<input type="text" class="form-control" id="editcert_id" v-model="editcert.CertificationID" >
 	</div>
-
 	<label for="certifyingAgency">Certifying Agency</label>
 	<input type="text" v-model="editcert.certifyingAgency" class="form-control" id="certifyingAgency" placeholder="Certifying Agency">
 	<label for="certificationName">Certification Name</label>
 	<input type="text" v-model="editcert.certificationName" class="form-control" id="certificationName" placeholder="Certification Name">
 	<label for="standardExpiry">Standard Expiry</label>
 	<input type="text" v-model="editcert.standardExpiry" class="form-control" id="standardExpiry" placeholder="Standard Expiry">
-
-
-
 		<div></br>
-			<!-- <input type="submit" value="Edit Member" class="button"> -->
 			<button v-on:click.prevent ="editCert" type="submit" >Edit Certification</button>
 		</div>
-
 	</form>
-
 </div>
 				<!-- <h2>Search for User's Cerfitification Informaion</h2>
 				<form class="form-group" action="index.html" method="get">
@@ -162,10 +150,12 @@ delete member certifications.</p>
 				</footer>
 
 		<!-- Scripts -->
+		<!-- used first to link jquery, them to call the js files that delete, post, get, and edit -->
 		<script type="JavaScript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 		<script src="js/certification.app.js"></script>
 		<script src="js/editcert.app.js"></script>
+		<!-- used for the template, add style and flow -->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.scrolly.min.js"></script>
 		<script src="js/jquery.scrollex.min.js"></script>
@@ -173,6 +163,14 @@ delete member certifications.</p>
 		<script src="js/breakpoints.min.js"></script>
 		<script src="js/util.js"></script>
 		<script src="js/main.js"></script>
+		<!-- used for tablesorting -->
+		<script src="js/tablesort.js"></script>
+		<script src='js/tablesort.min.js'></script>
+		<script src='js/tablesort.number.js'></script>
+		<script src='js/tablesort.date.js'></script>
+		<script>
+			new Tablesort(document.getElementById('srttable'));
+		</script>
 
 
 	</body>

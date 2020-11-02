@@ -1,39 +1,25 @@
-var app = new Vue({
-  el: '#stationreport',
+memRepApp = new Vue ({
+  el: '#mem_rep',
   data: {
-    station: [{
+    MemList: [{
+      firstName: '',
+      lastName: '',
+      stationNumber: '',
       radioNumber: '',
-      stationNumber: ''
-    }],
-    filter_station:[]
+      email: ''
+    }]
   },
-
-
   methods: {
-    createStation( ){
-      //make a line for getting the // ID
-      fetch('api/report/station.php',{
-      method:'POST',
-      body: JSON.stringify(this.station),
-      headers: {
-        "Content-Type": "application/json; charset=utf-8"
-      }}
-    )
-    .then( response => response.json() )
-    .then( json => {
-      console.log("Returned from post:", json);
-      this.filter_station = json;
-    });
-    console.log("Creating (POSTING)...!");
-    console.log(this.station);
+    fetchMember(){
+      fetch('api/report/station.php')
+        .then(response => response.json())
+        .then(json => {
+          this.MemList = json;
+          console.log(this.MemList);
+        });
+    },
   },
-  stationData() {
-    return {
-      radioNumber: '',
-      stationNumber: ''
-    }
-  }
-  }
-
-  },
-  )
+  created() {
+    this.fetchMember();
+}
+});

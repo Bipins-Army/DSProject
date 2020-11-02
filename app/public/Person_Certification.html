@@ -15,7 +15,7 @@
 	<body class="is-preload">
 
 		<!-- Wrapper -->
-
+		<div id="wrapper">
 
 				<!-- Header -->
 				<!-- Note: The "styleN" class below should match that of the banner element. -->
@@ -32,7 +32,7 @@
 						<li><a href="index.html">Home</a></li>
             <li><a href="certification.html">Cerfitification</a></li>
             <li><a href="Members.html">Members</a></li>
-						<li><a href="detail.html">Member Details</a></li>
+						<li><a href="detail.html">Details</a></li>
 						<li><a href="Reports.html">Reports</a></li>
 						<li><a href="Person_Certification.html">Person Certification</a></li>
 						<li><a href="phone.html">Person Phone</a></li>
@@ -51,8 +51,7 @@
 								<h1>Certification</h1>
 							</header>
 							<div class="content">
-								<p>On this page you can view a list of certified people and  add, edit, or
-delete member certifications.</p>
+
 							</div>
 						</div>
 					</section>
@@ -60,20 +59,23 @@ delete member certifications.</p>
 				<!-- Main -->
 
 
-<div class="personCertificationPage">
-				<h2>Enter a New Peson Certification</h2>
-				<form v-on:submit.prevent="createPersonCertification()">
-				    <label for="CertificationID">Certification ID</label>
-				    <input type="text" class="form-control" id="CertificationID" aria-describedby="CertificationID" placeholder="Enter a Certification ID">
-				    <label for="PersonalID">Personal ID</label>
-				    <input type="text" v-model="newPerson_Certification.PersonalID" class="form-control" id="PersonalID" placeholder="PersonalID">
-				    <label for="certificationStatus">Certification Status</label>
-				    <input type="text" v-model="newPerson_Certification.certificationStatus" class="form-control" id="certificationStatus" placeholder="Certification Status">
-				    <label for="expirationDate">Expiration Date</label>
-				    <input type="text" v-model="newPerson_Certification.expirationDate" class="form-control" id="expirationDate" placeholder="Expiration Date">
-				<input type="submit" class="button" value = "Create PersonCertification">
-				</form>
+<div id="personCertificationPage">
 
+				<form v-on:submit.prevent="createPersonCertification">
+					<div class="pc">
+						<h2>Enter a New Peson Certification</h2>
+				    <label for="CertificationID">Certification ID</label>
+				    <input type="text"v-model="newPersonCertification.CertificationID" class="form-control" id="CertificationID"  placeholder="Enter a Certification ID">
+				    <label for="PersonalID">Personal ID</label>
+				    <input type="text" v-model="newPersonCertification.PersonalID" class="form-control" id="PersonalID" placeholder="PersonalID">
+				    <label for="certificationStatus">Certification Status</label>
+				    <input type="text" v-model="newPersonCertification.certificationStatus" class="form-control" id="certificationStatus" placeholder="Certification Status">
+				    <label for="expirationDate">Expiration Date</label>
+				    <input type="text" v-model="newPersonCertification.expirationDate" class="form-control" id="expirationDate" placeholder="Expiration Date">
+				</br><input type="submit" class="button" value = "Create PersonCertification">
+			</div>
+				</form>
+<div>
 				<h2> View Certification </h2>
 							<table>
 								<thead>
@@ -85,16 +87,17 @@ delete member certifications.</p>
 									</tr>
 								</thead>
 							<tbody>
-									<tr v-for = "P in PersonCertification">
+									<tr v-for = "P in personCertification">
 										<td>{{P.CertificationID}}</td>
 										<td>{{P.PersonalID}}</td>
-										<td>{{ P.certificationStatus}}</td>
+										<td>{{P.certificationStatus}}</td>
 										<td>{{P.expirationDate}}</td>
 									</tr>
 								</tbody>
 							</table>
 						</div>
 			</div>
+		</div>
 
 				<!-- Footer -->
 				<footer id="footer">
