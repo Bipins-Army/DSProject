@@ -63,7 +63,7 @@
 				<h2>Enter a New Peson Certification</h2>
 				<form v-on:submit.prevent="createPersonCertification">
 				    <label for="CertificationID">Certification ID</label>
-				    <input type="text" class="form-control" id="CertificationID" aria-describedby="CertificationID" placeholder="Enter a Certification ID">
+				    <input type="text"v-model="newPersonCertification.CertificationID" class="form-control" id="CertificationID"  placeholder="Enter a Certification ID">
 				    <label for="PersonalID">Personal ID</label>
 				    <input type="text" v-model="newPersonCertification.PersonalID" class="form-control" id="PersonalID" placeholder="PersonalID">
 				    <label for="certificationStatus">Certification Status</label>
