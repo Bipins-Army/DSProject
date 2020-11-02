@@ -5,13 +5,13 @@ var app = new Vue({
       CertificationID: "",
       PersonalID: "",
       certificationStatus: "",
-      expirationDate: "",
+      expirationDate: ""
     }],
     newPersonCertification: {
       CertificationID: "",
       PersonalID: "",
       certificationStatus: "",
-      expirationDate: "",
+      expirationDate: ""
     },
   },
   created() {
@@ -49,7 +49,7 @@ var app = new Vue({
       CertificationID: "",
       PersonalID: "",
       certificationStatus: "",
-      expirationDate: "",
+      expirationDate: ""
     }
   }
 },

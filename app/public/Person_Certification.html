@@ -60,8 +60,10 @@
 
 
 <div id="personCertificationPage">
-				<h2>Enter a New Peson Certification</h2>
+
 				<form v-on:submit.prevent="createPersonCertification">
+					<div class="pc">
+						<h2>Enter a New Peson Certification</h2>
 				    <label for="CertificationID">Certification ID</label>
 				    <input type="text"v-model="newPersonCertification.CertificationID" class="form-control" id="CertificationID"  placeholder="Enter a Certification ID">
 				    <label for="PersonalID">Personal ID</label>
@@ -71,8 +73,9 @@
 				    <label for="expirationDate">Expiration Date</label>
 				    <input type="text" v-model="newPersonCertification.expirationDate" class="form-control" id="expirationDate" placeholder="Expiration Date">
 				</br><input type="submit" class="button" value = "Create PersonCertification">
+			</div>
 				</form>
-
+<div>
 				<h2> View Certification </h2>
 							<table>
 								<thead>
@@ -87,13 +90,14 @@
 									<tr v-for = "P in personCertification">
 										<td>{{P.CertificationID}}</td>
 										<td>{{P.PersonalID}}</td>
-										<td>{{ P.certificationStatus}}</td>
+										<td>{{P.certificationStatus}}</td>
 										<td>{{P.expirationDate}}</td>
 									</tr>
 								</tbody>
 							</table>
 						</div>
 			</div>
+		</div>
 
 				<!-- Footer -->
 				<footer id="footer">
