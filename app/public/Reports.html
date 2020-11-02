@@ -80,7 +80,7 @@
 
 				    <div id="mem_rep">
 								<h2>List of Members by Station, Radio, and Email Address</h2>
-				      <table class="table" id="srttable">
+				      <table class="table" id="sorttable">
 				        <thead>
 				          <tr>
 				            <th>First Name</th>
@@ -104,7 +104,7 @@
 
 				    <div id="report2" >
 								<h2>List of Person ID by Expiration Date, Certification Name and Certifying Agency</h2>
-				      <table class="table" id="srttable">
+				      <table class="table" id="sttable">
 				        <thead>
 				          <tr>
 				            <th>Person ID</th>
@@ -156,6 +156,8 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 		<script>
   		new Tablesort(document.getElementById('srttable'));
+				new Tablesort(document.getElementById('sorttable'));
+				new Tablesort(document.getElementById('sttable'));
 		</script>
 
 	</body>
