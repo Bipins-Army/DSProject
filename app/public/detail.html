@@ -39,10 +39,32 @@
           </ul>
         </nav>
 
+				<h2>Certification for Members</h2>
+								<div id="details2" class="container">
+									<div v-for="(person,index) in groupedDetails">
+										<h2> List of Members with {{index}} Certification </h2>
+													<table class="table" id="srttable">
+														<thead>
+															<tr>
+																<th>{{index}}</th>
+
+															</tr>
+														</thead>
+													<tbody>
+															<tr v-for = "per in person">
+																<td>{{per}}</td>
+
+															</tr>
+														</tbody>
+													</table>
+
+									</div>
+								</div>
+
 <h2>Member with Certification</h2>
 				<div id="details" class="container">
 			    <div v-for="(person,index) in groupedDetails">
-			      <h3>{{index}}</h3>
+			      <p>{{index}}</>
 			      <ul>
 			        <li v-for="per in person">
 			          {{per}}
@@ -51,17 +73,7 @@
 			    </div>
 			  </div>
 
-				<h2>Certification for Members</h2>
-								<div id="details2" class="container">
-							    <div v-for="(person,index) in groupedDetails">
-							      <h3>{{index}}</h3>
-							      <ul>
-							        <li v-for="per in person">
-							          {{per}}
-							        </li>
-							      </ul>
-							    </div>
-							  </div>
+
 
 
 				<!-- Footer -->
@@ -90,6 +102,7 @@
 		<script src="js/breakpoints.min.js"></script>
 		<script src="js/util.js"></script>
 		<script src="js/main.js"></script>
+		<script src="js/tablesort.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
 
