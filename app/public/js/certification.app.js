@@ -40,7 +40,7 @@ var app = new Vue({
     .then( response => response.json() )
     .then( json => {
       console.log("Returned from post:", json);
-      this.certification.=json;
+      this.certification=json;
       this.newCertification = this.newCertificationData();
     });
     console.log("Creating (POSTING)...!");
